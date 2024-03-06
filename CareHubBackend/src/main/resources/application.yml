@@ -1,4 +1,6 @@
 
+jwt:
+  secret-key: "4589487d96e3db300db876e60aa1e41774fa603f5a99d86574e28bb502822ec6"
 
 spring:
   datasource:
