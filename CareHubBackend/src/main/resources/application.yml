@@ -1,0 +1,22 @@
+
+jwt:
+  secret-key: "4589487d96e3db300db876e60aa1e41774fa603f5a99d86574e28bb502822ec6"
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: 'user'
+    password: 'admin'
+    driver-class-name: org.postgresql.Driver
+  sql:
+    platform: postgres
+    init:
+      schema-locations: classpath:init-schema.sql
+      data-locations: classpath:init-data.sql
+      mode: always
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      # Change to none for production
+      ddl-auto: create-drop
