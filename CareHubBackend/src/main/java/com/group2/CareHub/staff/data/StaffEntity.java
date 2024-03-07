@@ -1,39 +1,39 @@
-package com.group2.CareHub.guardian.data;
+package com.group2.CareHub.staff.data;
 
 import com.group2.CareHub.account.AccountEntity;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Entity
-@Table(name = "guardians")
-public class GuardianEntity extends AccountEntity {
+@NoArgsConstructor
+@Table(name = "staffs")
+public class StaffEntity extends AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int guardianId;
-    private String phone;
-    private String address;
+    private int staffId;
+    private String position;
+    private String contactInfo;
 
-    public GuardianEntity() {}
-
-    private GuardianEntity(Builder builder) {
+    private StaffEntity(Builder builder) {
         super(builder.name, builder.email, builder.password);
-        phone = builder.phone;
-        address = builder.address;
+        position = builder.position;
+        contactInfo = builder.contactInfo;
     }
 
     public static Builder builder() {
         return new Builder();
     }
 
-
     public static final class Builder {
         private String name;
         private String email;
         private String password;
-        private String phone;
-        private String address;
+        private String position;
+        private String contactInfo;
 
         private Builder() {
         }
@@ -53,18 +53,18 @@ public class GuardianEntity extends AccountEntity {
             return this;
         }
 
-        public Builder phone(String val) {
-            phone = val;
+        public Builder position(String val) {
+            position = val;
             return this;
         }
 
-        public Builder address(String val) {
-            address = val;
+        public Builder contactInfo(String val) {
+            contactInfo = val;
             return this;
         }
 
-        public GuardianEntity build() {
-            return new GuardianEntity(this);
+        public StaffEntity build() {
+            return new StaffEntity(this);
         }
     }
 }

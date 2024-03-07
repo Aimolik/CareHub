@@ -1,32 +1,36 @@
-package com.group2.CareHub.security.configurations.beans;
+package com.group2.CareHub.account;
 
+import com.group2.CareHub.common.Role;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 
-public class GuardianDetails implements UserDetails {
+public class AccountDetails implements UserDetails {
 
-    private int guardianId;
+    private int id;
     private String email;
     private String password;
+    private Role role;
 
-    public GuardianDetails(int guardianId, String email, String password) {
-        this.guardianId = guardianId;
+    public AccountDetails(int id, String email, String password, Role role) {
+        this.id = id;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return List.of(new SimpleGrantedAuthority(Role.USER.name()));
         return null;
     }
 
-    public int getGuardianId() {
-        return guardianId;
+    public int getId() {
+        return id;
+    }
+
+    public Role getRole() {
+        return role;
     }
 
     @Override
@@ -59,5 +63,3 @@ public class GuardianDetails implements UserDetails {
         return true;
     }
 }
-
-enum Role { USER }

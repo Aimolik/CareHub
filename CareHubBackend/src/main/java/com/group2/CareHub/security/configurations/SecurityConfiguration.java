@@ -25,7 +25,6 @@ public class SecurityConfiguration {
     private final JwtAuthenticationFilter authenticationFilter;
     private final AuthenticationProvider authenticationProvider;
 
-
     public SecurityConfiguration(JwtAuthenticationFilter authenticationFilter, AuthenticationProvider authenticationProvider) {
         this.authenticationFilter = authenticationFilter;
         this.authenticationProvider = authenticationProvider;
@@ -35,8 +34,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // Routes
         http.authorizeHttpRequests(route -> route
-                .requestMatchers(HttpMethod.POST, "/api/guardian").permitAll()
-                .requestMatchers("/api/guardian/authenticate").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/guardian", "/api/staff").permitAll()
+                .requestMatchers("/api/guardian/authenticate", "/api/account/authenticate").permitAll()
                 .anyRequest().authenticated());
 
         // Configs

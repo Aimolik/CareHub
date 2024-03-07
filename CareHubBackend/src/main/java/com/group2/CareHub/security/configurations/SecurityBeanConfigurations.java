@@ -1,6 +1,6 @@
-package com.group2.CareHub.security.configurations.beans;
+package com.group2.CareHub.security.configurations;
 
-import com.group2.CareHub.guardian.data.GuardianRepository;
+import com.group2.CareHub.security.UserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,8 +8,6 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -17,9 +15,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityBeanConfigurations {
 
-    private final UserDetailsServiceImpl userDetailsService;
+    private final UserDetailsService userDetailsService;
 
-    public SecurityBeanConfigurations(UserDetailsServiceImpl userDetailsService) {
+    public SecurityBeanConfigurations(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 

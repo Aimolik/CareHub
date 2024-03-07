@@ -1,15 +1,16 @@
 package com.group2.CareHub.guardian;
 
-import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.guardian.data.GuardianRepository;
 import com.group2.CareHub.guardian.rest.GuardianRequestBody;
+import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @Slf4j
-@Component
+@Service
 public class GuardianService {
 
     private final GuardianRepository guardianRepository;
@@ -24,7 +25,7 @@ public class GuardianService {
     public String createGuardianAccount(GuardianRequestBody guardianRequestBody) {
         if(guardianRepository.findByEmail(guardianRequestBody.getEmail()) != null) {
             log.info("Email of {} is already taken!", guardianRequestBody.getEmail());
-            return "Email of " + guardianRequestBody.getEmail() + " is already taken! Please use another email.";
+            return "Email of " + guardianRequestBody.getEmail() + " for guardian is already taken! Please use another email.";
         }
         log.info("Creating guardian account for email: {}", guardianRequestBody.getEmail());
         GuardianEntity response = guardianRepository.save(guardianRequestBodyToEntity(guardianRequestBody));

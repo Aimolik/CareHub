@@ -1,14 +1,13 @@
 package com.group2.CareHub.security.jwt;
 
-import com.group2.CareHub.security.configurations.beans.GuardianDetails;
-import com.group2.CareHub.security.configurations.beans.UserDetailsServiceImpl;
+import com.group2.CareHub.account.AccountDetails;
+import com.group2.CareHub.security.UserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -19,10 +18,10 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtTokenService jwtTokenService;
-    private final UserDetailsServiceImpl userDetailsService;
+    private final UserDetailsService userDetailsService;
 
     public JwtAuthenticationFilter(JwtTokenService jwtTokenService,
-                                   UserDetailsServiceImpl userDetailsService) {
+                                   UserDetailsService userDetailsService) {
         this.jwtTokenService = jwtTokenService;
         this.userDetailsService = userDetailsService;
     }
@@ -37,15 +36,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String jwt = authHeader.substring(7);
         String user = jwtTokenService.extractUsername(jwt);
         if(SecurityContextHolder.getContext().getAuthentication() == null) {
-            GuardianDetails guardianDetails = (GuardianDetails) userDetailsService.loadUserByUsername(user);
-
-            if(jwtTokenService.isTokenValid(jwt, guardianDetails.getUsername())) {
+            AccountDetails accountDetails = (AccountDetails) userDetailsService.loadUserByUsername(user);
+            if(jwtTokenService.isTokenValid(jwt, accountDetails.getUsername() + "#" + accountDetails.getRole().name())) {
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        guardianDetails, null, guardianDetails.getAuthorities());
+                        accountDetails, null, accountDetails.getAuthorities());
                 authToken.setDetails(
                         new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
-
+                System.out.println("Authenticated: " + authToken.isAuthenticated());
             }
         }
         filterChain.doFilter(request, response);
