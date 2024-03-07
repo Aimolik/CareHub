@@ -42,8 +42,8 @@ public class GuardianController {
             log.info(authenticationException.getMessage());
             return "Invalid credentials! More info: " + authenticationException.getMessage();
         }
-        GuardianDetails guardianDetails = new GuardianDetails(email, password);
-        return jwtTokenService.generateToken(guardianDetails);
+
+        return jwtTokenService.generateToken(email);
     }
 
     @GetMapping("/test")

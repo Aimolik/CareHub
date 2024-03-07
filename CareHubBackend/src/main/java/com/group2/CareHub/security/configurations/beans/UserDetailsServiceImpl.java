@@ -20,6 +20,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         GuardianEntity guardianEntity = guardianRepository.findByEmail(email);
-        return new GuardianDetails(guardianEntity.getEmail(), guardianEntity.getPassword());
+        return new GuardianDetails(guardianEntity.getId(), guardianEntity.getEmail(), guardianEntity.getPassword());
     }
 }

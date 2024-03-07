@@ -9,7 +9,6 @@ spring:
     password: 'admin'
     driver-class-name: org.postgresql.Driver
   sql:
-    platform: postgres
     init:
       schema-locations: classpath:init-schema.sql
       data-locations: classpath:init-data.sql
@@ -17,6 +16,3 @@ spring:
   jpa:
     open-in-view: false
     show-sql: true
-    hibernate:
-      # Change to none for production
-      ddl-auto: create-drop

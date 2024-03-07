@@ -34,24 +34,25 @@ public class JwtTokenService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails);
+    public String generateToken(String email) {
+        return generateToken(new HashMap<>(), email);
     }
 
-    public String generateToken(Map<String, Object> extraClaims, UserDetails userDetails) {
+    public String generateToken(Map<String, Object> extraClaims, String email) {
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
-                .setSubject(userDetails.getUsername())
+                .setSubject(email)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + (1000 * 60 * 24)))
+                // TODO Number is only high for ease of testing, set to normal value later
+                .setExpiration(new Date(System.currentTimeMillis() + (999999999)))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    public boolean isTokenValid(String jwtToken, UserDetails userDetails) {
+    public boolean isTokenValid(String jwtToken, String email) {
         final String username = extractUsername(jwtToken);
-        return username.equals(userDetails.getUsername()) && !isTokenValid(jwtToken);
+        return username.equals(email) && !isTokenValid(jwtToken);
     }
 
     private boolean isTokenValid(String token) {

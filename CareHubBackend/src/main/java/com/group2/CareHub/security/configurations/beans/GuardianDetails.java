@@ -9,10 +9,12 @@ import java.util.List;
 
 public class GuardianDetails implements UserDetails {
 
+    private int guardianId;
     private String email;
     private String password;
 
-    public GuardianDetails(String email, String password) {
+    public GuardianDetails(int guardianId, String email, String password) {
+        this.guardianId = guardianId;
         this.email = email;
         this.password = password;
     }
@@ -21,6 +23,10 @@ public class GuardianDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
 //        return List.of(new SimpleGrantedAuthority(Role.USER.name()));
         return null;
+    }
+
+    public int getGuardianId() {
+        return guardianId;
     }
 
     @Override
