@@ -20,3 +20,14 @@ CREATE TABLE staffs (
     contact_info varchar(255) NOT NULL,
     position varchar(50) NOT NULL
 );
+
+DROP TABLE IF EXISTS children CASCADE;
+
+CREATE TABLE children (
+    child_id SERIAL PRIMARY KEY,
+    guardian_id SERIAL REFERENCES guardians(guardian_id),
+    name varchar(255) NOT NULL,
+    date_of_birth date NOT NULL,
+    address varchar(255) NOT NULL,
+    medical_information varchar(255) NOT NULL
+);
