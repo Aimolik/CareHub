@@ -1,6 +1,6 @@
 package com.group2.CareHub.guardian.data;
 
-import com.group2.CareHub.account.AccountEntity;
+import com.group2.CareHub.account.data.AccountEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,10 +1,9 @@
 package com.group2.CareHub.staff.data;
 
-import com.group2.CareHub.account.AccountEntity;
+import com.group2.CareHub.account.data.AccountEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @Entity

@@ -1,5 +1,8 @@
 package com.group2.CareHub.guardian;
 
+import com.group2.CareHub.child.data.ChildEntity;
+import com.group2.CareHub.child.data.ChildRepository;
+import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.guardian.data.GuardianRepository;
 import com.group2.CareHub.guardian.rest.GuardianRequestBody;
@@ -8,6 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -35,6 +41,16 @@ public class GuardianService {
         }
         log.info("Successfully saved guardian account of email: {}", guardianRequestBody.getEmail());
         return "Successfully saved guardian account of email: " + guardianRequestBody.getEmail();
+    }
+
+    public GuardianEntity getGuardianById(int guardianId) {
+        // TODO Map to another object so password isn't included
+        Optional<GuardianEntity> response = guardianRepository.findByGuardianId(guardianId);
+        if(response.isEmpty()) {
+            log.error("No guardian found with id: {}", guardianId);
+            throw new EntityNotFoundException("No guardian found with id: " + guardianId);
+        }
+        return response.get();
     }
 
     private GuardianEntity guardianRequestBodyToEntity(GuardianRequestBody guardianRequestBody) {

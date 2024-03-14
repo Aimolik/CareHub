@@ -1,4 +1,4 @@
-package com.group2.CareHub.account;
+package com.group2.CareHub.account.data;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;

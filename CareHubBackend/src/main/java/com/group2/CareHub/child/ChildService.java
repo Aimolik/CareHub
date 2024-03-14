@@ -3,9 +3,13 @@ package com.group2.CareHub.child;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.child.data.ChildRepository;
 import com.group2.CareHub.child.rest.ChildRequestBody;
+import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -28,9 +32,22 @@ public class ChildService {
         return "Successfully saved child for guardian id: " + guardianId;
     }
 
+    public List<ChildEntity> getChildrenByGuardianId(int guardianId) {
+        return childRepository.findChildEntitiesByGuardianId(guardianId);
+    }
+
+    public ChildEntity getChildByChildId(int childId) {
+        Optional<ChildEntity> childEntity = childRepository.findChildEntityByChildId(childId);
+        if(childEntity.isEmpty()) {
+            log.error("Child with id {} not found", childId);
+            throw new EntityNotFoundException("Child with id " + childId + " not found");
+        }
+        return childEntity.get();
+    }
+
     private ChildEntity childRequestBodyToEntity(ChildRequestBody childRequestBody, int guardianId) {
         return ChildEntity.builder()
-                .guardian_id(guardianId)
+                .guardianId(guardianId)
                 .name(childRequestBody.getName())
                 .dateOfBirth(childRequestBody.getDateOfBirth())
                 .address(childRequestBody.getAddress())
