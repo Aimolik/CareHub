@@ -1,6 +1,7 @@
 package com.group2.CareHub.account;
 
 import com.group2.CareHub.account.rest.AccountLoginRequestBody;
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.security.jwt.JwtTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +22,7 @@ public class AccountService {
         this.jwtTokenService = jwtTokenService;
     }
 
-    public String authenticateCredentials(@RequestBody AccountLoginRequestBody accountLoginRequestBody) {
+    public ResponseBody authenticateCredentials(@RequestBody AccountLoginRequestBody accountLoginRequestBody) {
         String email = accountLoginRequestBody.getEmail() + "#" + accountLoginRequestBody.getRole().name();
         String password = accountLoginRequestBody.getPassword();
         UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(email, password);
@@ -29,9 +30,9 @@ public class AccountService {
             authenticationManager.authenticate(credentials);
         } catch (AuthenticationException authenticationException) {
             log.info(authenticationException.getMessage());
-            return "Invalid credentials! More info: " + authenticationException.getMessage();
+            return new ResponseBody(400, "Invalid credentials! More info: " + authenticationException.getMessage());
         }
-
-        return jwtTokenService.generateToken(email);
+        String jwt = jwtTokenService.generateToken(email);
+        return new ResponseBody(200, jwt);
     }
 }

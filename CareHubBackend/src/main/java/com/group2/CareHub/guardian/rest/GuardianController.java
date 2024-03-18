@@ -2,10 +2,12 @@ package com.group2.CareHub.guardian.rest;
 
 import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.child.data.ChildEntity;
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.guardian.GuardianService;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.security.jwt.JwtTokenService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -27,8 +29,9 @@ public class GuardianController {
     }
 
     @PostMapping
-    public String createGuardian(@RequestBody GuardianRequestBody guardianRequestBody) {
-        return guardianService.createGuardianAccount(guardianRequestBody);
+    public ResponseEntity<ResponseBody> createGuardian(@RequestBody GuardianRequestBody guardianRequestBody) {
+        ResponseBody responseBody = guardianService.createGuardianAccount(guardianRequestBody);
+        return ResponseEntity.ok(responseBody);
     }
 
     @GetMapping("/{guardianId}/children")

@@ -2,7 +2,9 @@ package com.group2.CareHub.account.rest;
 
 import com.group2.CareHub.account.AccountDetails;
 import com.group2.CareHub.account.AccountService;
+import com.group2.CareHub.common.ResponseBody;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,8 +24,9 @@ public class AccountController {
     }
 
     @PostMapping("/authenticate")
-    private String authenticate(@RequestBody AccountLoginRequestBody accountLoginRequestBody) {
-        return accountService.authenticateCredentials(accountLoginRequestBody);
+    private ResponseEntity<ResponseBody> authenticate(@RequestBody AccountLoginRequestBody accountLoginRequestBody) {
+        ResponseBody responseBody = accountService.authenticateCredentials(accountLoginRequestBody);
+        return ResponseEntity.ok(responseBody);
     }
 
     @GetMapping("/test")

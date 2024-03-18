@@ -86,11 +86,11 @@
     </style>
 </head>
 <body>
- <form action="./Register.php" method="post">
+ <form action="" method="post">
  </form>
     <div class="container">
         <h2>Registration Form</h2>
-        <form action="./Register.php" method="post">
+        <form action="" method="post">
 
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
@@ -112,12 +112,14 @@
             <input type="text" id="address" name="address" required><br>
             <span id="addressError" class="error"></span><br>
 
-            <input type="submit" value="Register">
+            <input type="submit" value="Register" class="submit">
         </form>
         <a href="Carehub.html" class="return-link">← Return to Homepage</a>
     </div>
     <footer>
         <p>&copy; 2024 CareHub. All rights reserved.</p>
     </footer>
+
+    <script type="module" src="./Register.js"></script>
 </body>
 </html>

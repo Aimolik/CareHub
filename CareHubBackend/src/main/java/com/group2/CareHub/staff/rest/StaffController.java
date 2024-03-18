@@ -1,7 +1,9 @@
 package com.group2.CareHub.staff.rest;
 
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.staff.StaffService;
 import com.group2.CareHub.staff.data.StaffEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,8 +17,9 @@ public class StaffController {
     }
 
     @PostMapping
-    public String registerStaff(@RequestBody StaffRequestBody staffRequestBody) {
-        return staffService.registerStaffAccount(staffRequestBody);
+    public ResponseEntity<ResponseBody> registerStaff(@RequestBody StaffRequestBody staffRequestBody) {
+        ResponseBody responseBody = staffService.registerStaffAccount(staffRequestBody);
+        return ResponseEntity.ok(responseBody);
     }
 
     @GetMapping("/{staffId}")

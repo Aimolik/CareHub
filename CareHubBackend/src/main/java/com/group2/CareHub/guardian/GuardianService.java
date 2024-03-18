@@ -2,6 +2,7 @@ package com.group2.CareHub.guardian;
 
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.child.data.ChildRepository;
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.guardian.data.GuardianRepository;
@@ -28,10 +29,10 @@ public class GuardianService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public String createGuardianAccount(GuardianRequestBody guardianRequestBody) {
+    public ResponseBody createGuardianAccount(GuardianRequestBody guardianRequestBody) {
         if(guardianRepository.findByEmail(guardianRequestBody.getEmail()) != null) {
             log.info("Email of {} is already taken!", guardianRequestBody.getEmail());
-            return "Email of " + guardianRequestBody.getEmail() + " for guardian is already taken! Please use another email.";
+            return new ResponseBody(400, "Email of " + guardianRequestBody.getEmail() + " for guardian is already taken! Please use another email.");
         }
         log.info("Creating guardian account for email: {}", guardianRequestBody.getEmail());
         GuardianEntity response = guardianRepository.save(guardianRequestBodyToEntity(guardianRequestBody));
@@ -40,7 +41,7 @@ public class GuardianService {
             throw new EntityPersistException("Failure in saving guardian account for email: " + guardianRequestBody.getEmail());
         }
         log.info("Successfully saved guardian account of email: {}", guardianRequestBody.getEmail());
-        return "Successfully saved guardian account of email: " + guardianRequestBody.getEmail();
+        return new ResponseBody(200, "Successfully saved guardian account of email: " + guardianRequestBody.getEmail());
     }
 
     public GuardianEntity getGuardianById(int guardianId) {

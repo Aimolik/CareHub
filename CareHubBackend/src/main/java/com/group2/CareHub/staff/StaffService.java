@@ -1,5 +1,6 @@
 package com.group2.CareHub.staff;
 
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import com.group2.CareHub.staff.data.StaffEntity;
@@ -24,9 +25,9 @@ public class StaffService {
     }
 
 
-    public String registerStaffAccount(StaffRequestBody staffRequestBody) {
+    public ResponseBody registerStaffAccount(StaffRequestBody staffRequestBody) {
         if(staffRepository.findByEmail(staffRequestBody.getEmail()) != null) {
-            return "Email of " + staffRequestBody.getEmail() + " for staff is already taken! Please use another email.";
+            return new ResponseBody(400, "Staff account with email: " + staffRequestBody.getEmail() + " already exists!");
         }
         log.info("Creating staff account for email: {}", staffRequestBody.getEmail());
         StaffEntity staffEntity = staffRepository.save(staffRequestBodyToEntity(staffRequestBody));
@@ -35,7 +36,7 @@ public class StaffService {
             throw new EntityPersistException("Failure in saving staff account for email: " + staffEntity.getEmail());
         }
         log.info("Successfully saved staff account of email: {}", staffRequestBody.getEmail());
-        return "Successfully saved staff account of email: " + staffEntity.getEmail();
+        return new ResponseBody(200, "Successfully saved staff account of email: " + staffEntity.getEmail());
     }
 
     public StaffEntity getStaffById(int staffId) {

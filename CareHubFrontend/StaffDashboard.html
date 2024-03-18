@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daycare Management System - Staff Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header>
+    <h1>Daycare Management System</h1>
+</header>
+<div class="container">
+    <aside>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="guardians.php">Children Management</a></li>
+            <li><a href="#">Guardians</a></li>
+            <li><a href="#">Schedules</a></li>
+            <li><a href="#">Payments</a></li>
+            <li><a class="logout-button" href="../Login.html">Logout</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2 class="welcome-message">Welcome, Staff!</h2>
+        <p>This is your dashboard interface. You can manage various aspects of the daycare from here.</p>
+        <div class="check-in-out">
+            <button id="check-in">Check-in</button>
+            <button id="check-out">Check-out</button>
+        </div>
+    </main>
+</div>
+<script type="module" src="./StaffDashboard.js"></script>
+</body>
+</html>
