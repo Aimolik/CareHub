@@ -6,9 +6,12 @@ import com.group2.CareHub.security.jwt.JwtTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.HashMap;
 
 @Slf4j
 @Service
@@ -26,13 +29,21 @@ public class AccountService {
         String email = accountLoginRequestBody.getEmail() + "#" + accountLoginRequestBody.getRole().name();
         String password = accountLoginRequestBody.getPassword();
         UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(email, password);
+
+        Authentication authentication;
         try {
-            authenticationManager.authenticate(credentials);
+            authentication = authenticationManager.authenticate(credentials);
         } catch (AuthenticationException authenticationException) {
             log.info(authenticationException.getMessage());
             return new ResponseBody(400, "Invalid credentials! More info: " + authenticationException.getMessage());
         }
-        String jwt = jwtTokenService.generateToken(email);
+        HashMap<String, String> claims = new HashMap<>();
+        AccountDetails accountDetails = (AccountDetails) authentication.getPrincipal();
+        claims.put("accountId", String.valueOf(accountDetails.getId()));
+        claims.put("role", accountDetails.getRole().name());
+
+        String jwt = jwtTokenService.generateToken(claims, email);
+
         return new ResponseBody(200, jwt);
     }
 }

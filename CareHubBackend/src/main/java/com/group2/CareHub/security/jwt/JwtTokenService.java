@@ -38,7 +38,7 @@ public class JwtTokenService {
         return generateToken(new HashMap<>(), email);
     }
 
-    public String generateToken(Map<String, Object> extraClaims, String email) {
+    public String generateToken(Map<String, String> extraClaims, String email) {
         return Jwts
                 .builder()
                 .setClaims(extraClaims)

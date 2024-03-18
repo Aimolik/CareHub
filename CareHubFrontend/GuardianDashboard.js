@@ -15,7 +15,7 @@ logoutButton.addEventListener('click', (e) => {
 })
 
 // Get JSON payload from JWT token
-const payload = getJwtTokenPayload();
+const payload = getJwtTokenPayload(token);
 const email = payload.sub.split('#')[0];
 
 const welcomeMessage = document.querySelector(".welcome-message");

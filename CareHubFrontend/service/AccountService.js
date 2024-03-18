@@ -35,7 +35,12 @@ export const login = async (body) => {
   }  
 }
 
-export const getJwtTokenPayload = (token) => {
+export const getJwtTokenPayload = () => {
+  const token = localStorage.getItem('token');
+  if(token === null || token === undefined) {
+    console.error("Token is not set!");
+    return "";
+  }
   const base64Url = token.split('.')[1];
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {

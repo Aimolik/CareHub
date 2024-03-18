@@ -1,5 +1,5 @@
 import { registerAccount } from "./service/AccountService.js";
-import { getValueFromForms } from "./service/FormService.js";
+import { getValueFromForms, createFormWithValues } from "./service/FormService.js";
 
 const submitButton = document.querySelector(".submit");
 const container = document.querySelector('.subform');
@@ -36,10 +36,10 @@ document.querySelectorAll('input[name="account-type"]').forEach((elem) => {
     clearContainer();
     console.log(elem.value);
     if(elem.value === "guardian") {
-      addToContainer(guardianForm);
+      createFormWithValues(container, guardianForm);
       accountType = "GUARDIAN";
     } else {
-      addToContainer(staffForm);
+      createFormWithValues(container, staffForm)
       accountType = "STAFF";
     }
   })
@@ -51,31 +51,4 @@ const clearContainer = () => {
   }
 }
 
-const addToContainer = (values) => {
-  for(let i = 0; i < values.length; i++) {
-    const value = values[i];
-    const label = document.createElement("label");
-    label.setAttribute('for', value.name);
-    const display = value.display !== undefined ? value.display : value.name;
-    label.textContent = display[0].toUpperCase() + display.substring(1);
-
-    const input = document.createElement("input");
-    input.setAttribute('type', value.type);
-    input.setAttribute('id', value.name);
-    input.setAttribute('name', value.name);
-    input.setAttribute('required', '');
-
-    const span = document.createElement("span");
-    span.setAttribute('id', value.name + "Error");
-    span.setAttribute('class', 'error');
-
-    const br = document.createElement("br");
-
-    container.appendChild(label);
-    container.appendChild(input);
-    container.appendChild(span);
-    container.appendChild(br);
-  }
-}
-
-addToContainer(guardianForm);
+createFormWithValues(container, guardianForm);

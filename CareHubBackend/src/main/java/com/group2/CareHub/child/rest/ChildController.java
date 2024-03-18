@@ -3,7 +3,9 @@ package com.group2.CareHub.child.rest;
 import com.group2.CareHub.account.AccountDetails;
 import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.child.data.ChildEntity;
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.common.Role;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,12 +22,13 @@ public class ChildController {
     }
 
     @PostMapping
-    public String registerChild(@RequestBody ChildRequestBody childRequestBody) {
+    public ResponseEntity<ResponseBody> registerChild(@RequestBody ChildRequestBody childRequestBody) {
         AccountDetails guardianDetails = (AccountDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(guardianDetails.getRole() != Role.GUARDIAN) {
-            return "You must be a guardian in order to register a child!";
+            return ResponseEntity.ok(new ResponseBody(403, "You must be a guardian in order to register a child!"));
         }
-        return childService.registerChildWithGuardian(childRequestBody, guardianDetails.getId());
+        ResponseBody responseBody = childService.registerChildWithGuardian(childRequestBody, guardianDetails.getId());
+        return ResponseEntity.ok(responseBody);
     }
 
     @GetMapping("/{childId}")

@@ -3,6 +3,7 @@ package com.group2.CareHub.child;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.child.data.ChildRepository;
 import com.group2.CareHub.child.rest.ChildRequestBody;
+import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ public class ChildService {
         this.childRepository = childRepository;
     }
 
-    public String registerChildWithGuardian(ChildRequestBody childRequestBody, int guardianId) {
+    public ResponseBody registerChildWithGuardian(ChildRequestBody childRequestBody, int guardianId) {
         log.info("Creating child for guardian id {}", guardianId);
         ChildEntity response = childRepository.save(childRequestBodyToEntity(childRequestBody, guardianId));
         if(response == null) {
@@ -29,7 +30,7 @@ public class ChildService {
             throw new EntityPersistException("Failure in saving child entity for guardian id: " + guardianId);
         }
         log.info("Successfully saved child for guardian id: {}", guardianId);
-        return "Successfully saved child for guardian id: " + guardianId;
+        return new ResponseBody(200, "Successfully saved child for guardian id: " + guardianId);
     }
 
     public List<ChildEntity> getChildrenByGuardianId(int guardianId) {
