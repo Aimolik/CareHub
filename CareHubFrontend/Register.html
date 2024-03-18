@@ -104,13 +104,15 @@
             <input type="password" id="password" name="password" required><br>
             <span id="passwordError" class="error"></span><br>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required><br>
-            <span id="phoneError" class="error"></span><br>
+            
+            <!-- Since staff and guardian are different, we put in a container to switch -->
+            <input type="radio" id="guardian" name="account-type" value="guardian" checked="checked">
+            <label for="guardian">Guardian</label>
+            <input type="radio" id="staff" name="account-type" value="staff">
+            <label for="staff">Staff</label>
+            <div class="subform">
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required><br>
-            <span id="addressError" class="error"></span><br>
+            </div>
 
             <input type="submit" value="Register" class="submit">
         </form>
