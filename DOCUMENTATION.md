@@ -16,11 +16,12 @@ docker run -d -p 5432:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=admin --na
 ```
 
 To connect to the database, use 'user' as user and 'admin' as password for authentication.
-Once it is running, start the CareHubApplication file.
+Once it is running, start the CareHubApplication file found in CareHubBackend/src/java/com/group2/CareHub/CareHubApplication.java. 
+This application should automatically connect to the postgres container with the credentials.
 
-To start the frontend, run this in the terminal at CareHubFrontend file:
+To start the frontend, run this in the terminal at CareHubFrontend file :
 ```bash
-http-server -p 8181
+http-server -p 8081
 ```
 
 The frontend should be accessible at localhost:8081
