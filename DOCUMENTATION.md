@@ -19,7 +19,8 @@ To connect to the database, use 'user' as user and 'admin' as password for authe
 Once it is running, start the CareHubApplication file found in CareHubBackend/src/java/com/group2/CareHub/CareHubApplication.java. 
 This application should automatically connect to the postgres container with the credentials.
 
-To start the frontend, run this in the terminal at CareHubFrontend file :
+To start the frontend, run this in the terminal at CareHubFrontend file:
+This command can be installed using npm.
 ```bash
 http-server -p 8081
 ```
