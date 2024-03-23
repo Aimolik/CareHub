@@ -4,12 +4,10 @@ import com.group2.CareHub.account.AccountDetails;
 import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.common.ResponseBody;
-import com.group2.CareHub.common.Role;
+import com.group2.CareHub.common.enumeration.Role;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/child")

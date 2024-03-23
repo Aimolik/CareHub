@@ -1,7 +1,7 @@
 package com.group2.CareHub.security;
 
 import com.group2.CareHub.account.AccountDetails;
-import com.group2.CareHub.common.Role;
+import com.group2.CareHub.common.enumeration.Role;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.guardian.data.GuardianRepository;
 import com.group2.CareHub.staff.data.StaffEntity;

@@ -1,6 +1,6 @@
 package com.group2.CareHub.account.rest;
 
-import com.group2.CareHub.common.Role;
+import com.group2.CareHub.common.enumeration.Role;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.Getter;

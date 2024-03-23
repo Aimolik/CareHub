@@ -31,3 +31,15 @@ CREATE TABLE children (
     address varchar(255) NOT NULL,
     medical_information varchar(255) NOT NULL
 );
+
+DROP TABLE IF EXISTS attendances CASCADE;
+
+DROP TYPE IF EXISTS attendance_status;
+CREATE TYPE attendance_status AS ENUM ('CHECKED_IN', 'CHECKED_OUT');
+
+CREATE TABLE attendances (
+    attendance_id SERIAL PRIMARY KEY,
+    child_id SERIAL REFERENCES children(child_id),
+    created_at date NOT NULL,
+    attendance_status attendance_status NOT NULL
+);

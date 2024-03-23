@@ -1,6 +1,6 @@
 package com.group2.CareHub.account;
 
-import com.group2.CareHub.common.Role;
+import com.group2.CareHub.common.enumeration.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
