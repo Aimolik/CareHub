@@ -20,7 +20,16 @@ public class AttendanceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int attendanceId;
     private int childId;
-    private LocalDateTime createdAt;
+    private LocalDateTime checkedInTime;
+    private LocalDateTime checkedOutTime;
     @Enumerated(EnumType.STRING)
     private AttendanceStatus attendanceStatus;
+
+    public void setCheckedOutTime(LocalDateTime checkedOutTime) {
+        this.checkedOutTime = checkedOutTime;
+    }
+
+    public void setAttendanceStatus(AttendanceStatus attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
+    }
 }

@@ -40,6 +40,7 @@ CREATE TYPE attendance_status AS ENUM ('CHECKED_IN', 'CHECKED_OUT');
 CREATE TABLE attendances (
     attendance_id SERIAL PRIMARY KEY,
     child_id SERIAL REFERENCES children(child_id),
-    created_at date NOT NULL,
+    checked_in_time timestamp NOT NULL,
+    checked_out_time timestamp,
     attendance_status attendance_status NOT NULL
 );
