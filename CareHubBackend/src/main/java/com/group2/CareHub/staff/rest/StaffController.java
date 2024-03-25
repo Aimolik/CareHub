@@ -4,6 +4,7 @@ import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.staff.StaffService;
 import com.group2.CareHub.staff.data.StaffEntity;
 import com.group2.CareHub.staff.dto.Staff;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class StaffController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBody> registerStaff(@RequestBody StaffRequestBody staffRequestBody) {
+    public ResponseEntity<ResponseBody> registerStaff(@RequestBody @Valid StaffRequestBody staffRequestBody) {
         ResponseBody responseBody = staffService.registerStaffAccount(staffRequestBody);
         return ResponseEntity.ok(responseBody);
     }

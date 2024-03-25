@@ -7,6 +7,7 @@ import com.group2.CareHub.guardian.GuardianService;
 import com.group2.CareHub.guardian.data.GuardianEntity;
 import com.group2.CareHub.guardian.dto.Guardian;
 import com.group2.CareHub.security.jwt.JwtTokenService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -30,7 +31,7 @@ public class GuardianController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBody> createGuardian(@RequestBody GuardianRequestBody guardianRequestBody) {
+    public ResponseEntity<ResponseBody> createGuardian(@RequestBody @Valid GuardianRequestBody guardianRequestBody) {
         ResponseBody responseBody = guardianService.createGuardianAccount(guardianRequestBody);
         return ResponseEntity.ok(responseBody);
     }
