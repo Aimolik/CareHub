@@ -49,39 +49,14 @@ main {
     flex: 1;
     padding: 20px;
 }
-.check-in-out {
-    margin-top: 20px;
+.return-link {
+    display: block;
     text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
 }
 
-.check-in-out button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.check-in-out button:hover {
-    background-color: #45a049;
-}
-.check-in-out {
-    margin-top: 20px;
-    display: grid;
-    place-items: center;
-    height: 100vh; /* Set the height to the full viewport height */
-}
-.check-in-out {
-    margin-top: 10px; /* Adjust the margin-top to move the buttons closer to the welcome message */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto; /* Set height to auto to adjust based on content */
-    flex-direction: column;
-}
-
-.check-in-out button {
-    margin: 10px; /* Add margin between the buttons */
+.return-link:hover {
+    text-decoration: underline;
 }
