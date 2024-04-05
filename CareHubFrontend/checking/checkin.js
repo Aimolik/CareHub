@@ -1,5 +1,5 @@
-import { getRegisteredChildrenWithGuardianId } from "./service/ChildService.js";
-import { getJwtTokenPayload } from './service/AccountService.js';
+import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
+import { getJwtTokenPayload } from '../service/AccountService.js';
 
 const childSelect = document.getElementById('child-select');
 const payload = getJwtTokenPayload();

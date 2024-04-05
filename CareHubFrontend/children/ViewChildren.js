@@ -1,12 +1,7 @@
-<<<<<<< HEAD:CareHubFrontend/children/ViewChildren.js
 
 import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
 import { getJwtTokenPayload } from '../service/AccountService.js';
-=======
-import { getRegisteredChildrenWithGuardianId } from "./service/ChildService.js";
-import { getJwtTokenPayload } from './service/AccountService.js';
 
->>>>>>> 2efc141c36058501130525afd18798b6afc863ed:CareHubFrontend/ViewChildren.js
 const container = document.querySelector('.child-container');
 
 const getChildren = async () => {
