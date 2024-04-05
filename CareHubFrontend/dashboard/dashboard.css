@@ -1,0 +1,87 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f9e4b7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #ff9f9f;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.container {
+    display: flex;
+    padding: 20px;
+}
+aside {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+aside h2 {
+    margin-top: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 10px;
+}
+ul li a {
+    color: #333;
+    text-decoration: none;
+}
+ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+.check-in-out {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.check-in-out button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.check-in-out button:hover {
+    background-color: #45a049;
+}
+.check-in-out {
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Set the height to the full viewport height */
+}
+.check-in-out {
+    margin-top: 10px; /* Adjust the margin-top to move the buttons closer to the welcome message */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Set height to auto to adjust based on content */
+    flex-direction: column;
+}
+
+.check-in-out button {
+    margin: 10px; /* Add margin between the buttons */
+}

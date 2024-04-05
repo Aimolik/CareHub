@@ -1,6 +1,6 @@
 
-import { getRegisteredChildrenWithGuardianId } from "./service/ChildService.js";
-import { getJwtTokenPayload } from './service/AccountService.js';
+import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
+import { getJwtTokenPayload } from '../service/AccountService.js';
 const container = document.querySelector('.child-container');
 
 const payload = getJwtTokenPayload();

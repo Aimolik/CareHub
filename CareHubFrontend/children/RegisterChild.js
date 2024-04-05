@@ -1,6 +1,6 @@
 
-import { createFormWithValues, getValueFromForms } from './service/FormService.js';
-import { registerChild } from './service/ChildService.js';
+import { createFormWithValues, getValueFromForms } from '../service/FormService.js';
+import { registerChild } from '../service/ChildService.js';
 
 const container = document.querySelector('.subform');
 const submitButton = document.querySelector(".submit");
