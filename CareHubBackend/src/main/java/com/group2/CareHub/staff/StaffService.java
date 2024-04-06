@@ -5,6 +5,7 @@ import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import com.group2.CareHub.staff.data.StaffEntity;
 import com.group2.CareHub.staff.data.StaffRepository;
+import com.group2.CareHub.staff.dto.Staff;
 import com.group2.CareHub.staff.rest.StaffRequestBody;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,12 +17,12 @@ import java.util.Optional;
 @Service
 public class StaffService {
 
+    private final StaffDataMapper staffDataMapper;
     private final StaffRepository staffRepository;
-    private final PasswordEncoder passwordEncoder;
 
-    public StaffService(StaffRepository staffRepository, PasswordEncoder passwordEncoder) {
+    public StaffService(StaffDataMapper staffDataMapper, StaffRepository staffRepository) {
+        this.staffDataMapper = staffDataMapper;
         this.staffRepository = staffRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -30,7 +31,7 @@ public class StaffService {
             return new ResponseBody(400, "Staff account with email: " + staffRequestBody.getEmail() + " already exists!");
         }
         log.info("Creating staff account for email: {}", staffRequestBody.getEmail());
-        StaffEntity staffEntity = staffRepository.save(staffRequestBodyToEntity(staffRequestBody));
+        StaffEntity staffEntity = staffRepository.save(staffDataMapper.staffRequestBodyToEntity(staffRequestBody));
         if(staffEntity == null) {
             log.error("Failure in saving staff account of email: {}", staffEntity.getEmail());
             throw new EntityPersistException("Failure in saving staff account for email: " + staffEntity.getEmail());
@@ -39,24 +40,12 @@ public class StaffService {
         return new ResponseBody(200, "Successfully saved staff account of email: " + staffEntity.getEmail());
     }
 
-    public StaffEntity getStaffById(int staffId) {
-        // TODO Map to another object so password isn't included
+    public Staff getStaffById(int staffId) {
         Optional<StaffEntity> response = staffRepository.findByStaffId(staffId);
         if(response.isEmpty()) {
             log.error("Staff with id: {} not found!", staffId);
             throw new EntityNotFoundException("Staff with id: " + staffId + " not found!");
         }
-        return response.get();
-    }
-
-    private StaffEntity staffRequestBodyToEntity(StaffRequestBody staffRequestBody) {
-        String encryptedPassword = passwordEncoder.encode(staffRequestBody.getPassword());
-        return StaffEntity.builder()
-                .name(staffRequestBody.getName())
-                .email(staffRequestBody.getEmail())
-                .password(encryptedPassword)
-                .position(staffRequestBody.getPosition())
-                .contactInfo(staffRequestBody.getContactInfo())
-                .build();
+        return staffDataMapper.staffEntityToStaff(response.get());
     }
 }

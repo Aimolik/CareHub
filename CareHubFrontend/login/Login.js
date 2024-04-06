@@ -1,6 +1,6 @@
 
-import { getValueFromForms } from "./service/FormService.js";
-import { login, getJwtTokenPayload } from "./service/AccountService.js";
+import { getValueFromForms } from "../service/FormService.js";
+import { login, getJwtTokenPayload } from "../service/AccountService.js";
 const loginButton = document.querySelector('.submit');
 let accountType = "GUARDIAN";
 
@@ -20,9 +20,9 @@ const loginFunction = async (body) => {
     const payload = getJwtTokenPayload();
     const role = payload.sub.split('#')[1];
     if(role === "GUARDIAN") {
-      window.location.href = "./GuardianDashboard.html";
+      window.location.href = "../dashboard/GuardianDashboard.html";
     } else {
-      window.location.href = "./StaffDashboard.html";
+      window.location.href = "../dashboard/StaffDashboard.html";
     }
   } else {
     window.alert(response.message);

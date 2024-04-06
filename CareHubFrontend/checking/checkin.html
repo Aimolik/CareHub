@@ -39,10 +39,8 @@
             margin-bottom: 8px;
         }
         
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="tel"] {
+        input[type="date"],
+        input[type="time"] {
             width: 100%;
             padding: 8px;
             margin-bottom: 10px;
@@ -87,23 +85,35 @@
 </head>
 <body>
  <form action="" method="post">
- </form>
+    <header>
+        <h1>Check-In</h1>
+    </header>
+
     <div class="container">
-        <h2>Register child</h2>
-        <form action="" method="post">
+        <form id="checkin-form">
+            <label for="child-select">Child:</label>
+            <select id="child-select">
+                </select>
+                <label for="checkin-date">Date:</label>
+                <input type="date" id="checkin-date" name="checkin-date">
 
-            <div class="subform">
-
-            </div>
-
-            <input type="submit" value="Register" class="submit">
+                <select id="checkin-time" name="checkin-time">
+                    <option value="07:00">7:00 AM</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                </select>
+                
+            <button type="submit">Check In</button>
         </form>
-        <a href="./GuardianDashboard.html" class="return-link">← Return to dashboard</a>
     </div>
+    <a href="../dashboard/GuardianDashboard.html" class="return-link">← Return to dashboard</a>
     <footer>
         <p>&copy; 2024 CareHub. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="./RegisterChild.js"></script>
+    <script type="module" src="./checkin.js"></script>
 </body>
 </html>

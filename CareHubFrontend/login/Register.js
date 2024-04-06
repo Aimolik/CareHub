@@ -1,5 +1,5 @@
-import { registerAccount } from "./service/AccountService.js";
-import { getValueFromForms, createFormWithValues } from "./service/FormService.js";
+import { registerAccount } from "../service/AccountService.js";
+import { getValueFromForms, createFormWithValues } from "../service/FormService.js";
 
 const submitButton = document.querySelector(".submit");
 const container = document.querySelector('.subform');

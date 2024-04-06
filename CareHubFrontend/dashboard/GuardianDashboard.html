@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHub - Guardian Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+<header>
+    <h1>CareHub</h1>
+</header>
+<div class="container">
+    <aside>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="../children/RegisterChild.html">Register child</a></li>
+            <li><a href="../children/ViewChildren.html">View children</a></li>
+            <li><a class="logout-button" href="../login/">Logout</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2 class="welcome-message">Welcome!</h2>
+        <div id="child-checkin-out">
+            <h3>Child Check-in/Check-out</h3>
+            <div class="links-container"> 
+                <ul>
+                    <li><a href="../checking/checkin.html">Check In Child</a></li>
+                    <li><a href="../checking/CheckOutChild.html">Check Out Child</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="module" src="./GuardianDashboard.js"></script>
+</body>
+</html>
