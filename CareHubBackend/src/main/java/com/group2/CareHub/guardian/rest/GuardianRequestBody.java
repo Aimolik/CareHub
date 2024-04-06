@@ -3,12 +3,12 @@ package com.group2.CareHub.guardian.rest;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class GuardianRequestBody {
 
     @NotBlank(message = "Name is required")
@@ -27,4 +27,5 @@ public class GuardianRequestBody {
     @NotBlank(message = "Password is required")
     @Size(max = 100, message = "Password must be less than 100 characters")
     private String password;
+
 }

@@ -1,2 +1,4 @@
-package com.group2.CareHub;public class ChildServiceIntegrationTests {
+package com.group2.CareHub;
+
+public class ChildServiceIntegrationTests {
 }
