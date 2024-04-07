@@ -789,3 +789,140 @@ input[type="submit"]:hover {
         
 
 /* end */
+
+/* checkout starts */
+
+.checkout{
+	background: #ffff;
+}
+
+.checkout .box-container{
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+
+.checkout .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.checkout .box-container .welcome{
+	position: relative;
+	text-align: center;
+}
+
+.checkout .box-container .welcome p{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+}
+
+.checkout .row{
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 4rem;
+	width: 90%;
+	align-items: center;
+	justify-content: center;
+}
+
+.checkout .row .image{
+	max-width: 150%;
+	height: 60rem;
+	flex: 1 1 20rem;
+}
+
+.checkout .row .image img{
+	width: 130%;
+	height: 100%;
+}
+
+.checkout .row form{
+    margin: 0 auto;
+	flex: 0 0 calc(60% - 20px);
+	padding: 0.1rem solid rgba(0,0,0,.4);
+	border: none;
+	color: var(--pink);
+}
+
+.checkout .row form h3{
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	color: var(--pink);
+}
+
+.checkout .row form .container{
+	max-width: 1000px;
+	flex: 1 1 20rem;
+	padding: 2rem;
+	border: 0.1rem solid rgba(0,0,0,.4);
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+}
+   
+
+.checkout form .container select{
+	font-size: 1.4rem;
+	width: 25%;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.checkout form .container input[type="date"],
+.checkout form .container input[type="time"] {
+	font-size: 1.4rem;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.checkout form .container button {
+	margin-top: 2rem;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--pink); 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+.checkout form .container button:hover {
+    background-color: #ff7f7f; 
+}
+
+        
+.checkout .error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.checkout a{
+    display: block;
+	text-align: center;
+	margin-top: 4rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+        
+.checkout a:hover {
+    text-decoration: underline;
+}
+
+/* ends */
