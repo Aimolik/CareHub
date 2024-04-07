@@ -1,12 +1,12 @@
 
 jwt:
-  secret-key: "4589487d96e3db300db876e60aa1e41774fa603f5a99d86574e28bb502822ec6"
+  secret-key: ${JWT_SECRET_KEY:4589487d96e3db300db876e60aa1e41774fa603f5a99d86574e28bb502822ec6}
 
 spring:
   datasource:
     url: jdbc:postgresql://${DATABASE_HOST:localhost}:5432/postgres?stringtype=unspecified
-    username: 'user'
-    password: 'admin'
+    username: ${DATABASE_USER:user}
+    password: ${DATABASE_PASSWORD:admin}
     driver-class-name: org.postgresql.Driver
   sql:
     init:
