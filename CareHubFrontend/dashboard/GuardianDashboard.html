@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareHub - Guardian Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js">
+  <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
-<header>
-    <h1>CareHub</h1>
-</header>
-<div class="container">
-    <aside>
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="../children/RegisterChild.html">Register child</a></li>
-            <li><a href="../children/ViewChildren.html">View children</a></li>
-            <li><a class="logout-button" href="../login/">Logout</a></li>
-        </ul>
-    </aside>
-    <main>
-        <h2 class="welcome-message">Welcome!</h2>
-        <div id="child-checkin-out">
-            <h3>Child Check-in/Check-out</h3>
-            <div class="links-container"> 
-                <ul>
-                    <li><a href="../checking/checkin.html">Check In Child</a></li>
-                    <li><a href="../checking/CheckOutChild.html">Check Out Child</a></li>
-                </ul>
-            </div>
-        </div>
-    </main>
-</div>
+	<header class= "header">
+		<a href="Carehub.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			<a href="carehub.html"> home</a> 
+			<a href="services.html">services</a> 
+			<a href="contact.html">contact</a>
+			<a href="carehub.html">logout</a> 
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-user" id="login-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+	
+	<section class="container" id="container">
+    
+        <h1 class="heading"><span>guardian</span> dashboard</h1>
+		
+        <div class="box-container">
+			<div class="welcome">
+			<p>Welcome to your guardian dashboard! We're thrilled to have you here. This hub is your go-to destination for managing your child's daycare experience with ease. From checking in and out to accessing vital information about your child's activities and well-being, your dashboard empowers you to stay connected and informed every step of the way.</p>
+			<img src="welcome.png" alt="">
+			</div>
+		</div>
+		
+		<div class="box-container">	
+		
+			<div class="box">
+				<h3>Register Chidlren</h3>
+				<p>Registering your child is the first step towards unlocking a world of opportunities at our daycare center. By completing the registration process, you'll provide us with essential information to ensure your child's safety, well-being, and personalized care. </p>
+				<div class="links-container"> 
+					<a href="../children/RegisterChild.html">Register children</a>
+					<img src="register.jpg" alt="">
+				</div>
+			</div>
+		
+			<div class="box">
+				<h3>View Chidlren</h3>
+				<p>View children provides you with a comprehensive overview of all the little ones enrolled in our daycare center. Stay connected with your child's daycare experience effortlessly through this feature.</p>
+				<div class="links-container"> 
+					<a href="../children/ViewChildren.html">View children</a>
+					<img src="viewchildren.jpg" alt="">
+				</div>
+			</div>
+			
+			<div class="box">
+				<h3>Children Check-in</h3>
+				<p>You can register your child's arrival here. Rest assured, we record each check-in time meticulously, prioritizing safety and accountability in our care practices.</p>
+				<div class="links-container"> 
+					<a href="../checking/checkin.html">Check in</a>
+					<img src="checkin.jpg" alt="">
+				</div>
+			</div>
+			
+			<div class="box">
+				<h3>Children Check-out</h3>
+				<p>You can conveniently check out your children here. We will also record the time when your children leave, maintaining accurate attendance records for your peace of mind and our commitment to safety.</p>
+				<div class="links-container"> 
+					<a href="../checking/checkout.html">Check out</a>
+					<img src="checkout.jpg" alt="">
+				</div>
+			</div>
+		</div>	
+       
+		
+       
+</section>
+
+	<!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
 <script type="module" src="./GuardianDashboard.js"></script>
 </body>
 </html>
