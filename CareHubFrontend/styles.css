@@ -651,3 +651,141 @@ input[type="submit"]:hover {
 }
 
 /* end */
+
+/* checkin starts */
+
+.annouce{
+	background: #ffff;
+}
+
+.annouce .box-container{
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+
+.annouce .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.annouce .box-container .welcome{
+	position: relative;
+	text-align: center;
+}
+
+.annouce .box-container .welcome p{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+}
+
+.annouce .row{
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 4rem;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.annouce .row .image{
+	max-width: 100%;
+	height: 60rem;
+	flex: 1 1 20rem;
+}
+
+.annouce .row .image img{
+	width: 100%;
+	height: 100%;
+}
+
+.annouce .row form{
+    margin: 0 auto;
+	flex: 0 0 calc(60% - 20px);
+	padding: 0.1rem solid rgba(0,0,0,.4);
+	border: none;
+	color: var(--pink);
+}
+
+.annouce .row form h3{
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	color: var(--pink);
+}
+
+.annouce .row form .container{
+	max-width: 1000px;
+	flex: 1 1 20rem;
+	padding: 2rem;
+	border: 0.1rem solid rgba(0,0,0,.4);
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+}
+   
+
+.annouce form .container select{
+	font-size: 1.4rem;
+	width: 25%;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.annouce form .container input[type="date"],
+.annouce form .container input[type="time"] {
+	font-size: 1.4rem;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.annouce form .container button[type="submit"] {
+	margin-top: 2rem;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--pink); 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+.annouce form .container button[type="submit"]:hover {
+    background-color: #ff7f7f; 
+}
+
+        
+ annouce .error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.annouce a{
+    display: block;
+	text-align: center;
+	margin-top: 4rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+        
+.annouce a:hover {
+    text-decoration: underline;
+}
+        
+
+/* end */
