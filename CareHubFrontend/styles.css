@@ -111,10 +111,10 @@ section{
 
 /* header ends */
 
-/*form*/
+/*registration form*/
 
 .form{
-	max-height: 200px;
+	max-height: 500px;
 	max-width: 200px;
 	margin: auto;
 }
@@ -124,7 +124,7 @@ section{
 {
 	top: 100px;
 	width: 80%;
-    margin: 0 auto;
+    margin-top: 6rem;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -200,7 +200,28 @@ input[type="submit"]:hover {
 	color: var(--light-color);
 }
 
-/*form ends */
+/* end */
+
+/* login starts*/
+
+body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f9e4b7;
+            color: #333;
+        }
+ 
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+  
+        #login {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+/* ends */
 
 /* home */
 
