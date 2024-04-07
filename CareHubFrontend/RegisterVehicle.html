@@ -1,109 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register child</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f9e4b7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #ff9f9f; /* Same as header background color */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        input[type="submit"]:hover {
-            background-color: #ff7f7f; /* Darker shade for hover effect */
-        }
-        
-        .error {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
-        .return-link {
-            display: block;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .return-link:hover {
-            text-decoration: underline;
-        }
-        
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register vehicle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js">
+  <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
- <form action="" method="post">
- </form>
-    <div class="container">
-        <h2>Register Vehicle</h2>
-        <form action="http://20.55.39.9:8080/api/vehicle" method="post">
+	<header class= "header">
+		<a href="Carehub.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			<a href="carehub.html"> home</a> 
+			<a href="services.html">services</a> 
+			<a href="contact.html">contact</a>
+			<a href="carehub.html">logout</a> 
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-user" id="login-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+	
+	<section class="vehicle" id="vehicle">
+    
+        <h1 class="heading">Register <span>Vehicle</span> </h1>
+		
+		<div class="row">
+		
+			<div class="image">
+				<img src="regvehicle.jpg" alt="">
+			</div>
+		
+			<div class="content">
+				<h3>Register here!</h3>
+				<p>Welcome to our vehicle registration portal! Here, you can easily register your vehicle by simply clicking on the button below. We've streamlined the process to ensure a hassle-free experience for you. Get started now and enjoy the convenience of managing your vehicle registration online.</p>
+	
+				<form action="" method="post">
+				</form>
+					<form action="http://20.55.39.9:8080/api/vehicle" method="post">
 
-            <div class="subform">
+						<div class="subform">
 
-            </div>
+						</div>
 
-            <input type="submit" value="Register" class="submit">
-        </form>
-        <a href="./GuardianDashboard.html" class="return-link">← Return to dashboard</a>
-    </div>
-    <footer>
-        <p>&copy; 2024 CareHub. All rights reserved.</p>
-    </footer>
-
-    <script type="module" src="./RegisterVehicle.js"></script>
+					<input type="submit" value="Register" class="submit">
+					</form>
+				<a href="./GuardianDashboard.html" class="return-link">← Return to dashboard</a>
+			</div>
+		
+		
+		</div>
+	</section>
+	
+    <!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
+<script type="module" src="./GuardianDashboard.js"></script>
 </body>
 </html>
