@@ -113,90 +113,101 @@ section{
 
 /*registration form*/
 
-.form{
-	max-height: 500px;
-	max-width: 200px;
-	margin: auto;
+.register{
+	background: url('3.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.registration-form,
-.login-form
+.register .registration-form
 {
-	top: 100px;
-	width: 80%;
-    margin-top: 6rem;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-	background: var(--white);
-	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	max-height: 1000px;
+	width: 100%;
+	margin-bottom: 10rem;
+	margin-top: 10rem;
 }
 
-.registration-form.active{
-	transition: .4s linear;
-	
-}
-
-.registration-form .h3,
-.login-form .h3{
-	font-size: 5rem;
+.register .registration-form h3
+{
+	margin-top: 5rem;
+	font-size: 3rem;
 	text-transform: uppercase;
-	color: var(--black);
+	color: #674ea7;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5rem;;
 }
+
+.register .registration-form form{
+	 display: flex;
+	 flex-direction: column;
+ }
         
- label {
+.register .registration-form form label {
 	font-size: 1.7rem; 
+	color: #9280c5;
+	font-weight: bold;
     display: block;
     margin-bottom: 8px;
 }
+
+.register .registration-form form input{
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
         
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-input[type="submit"] {
-    font-szie: 1.7rem;
+.register .registration-form form input[type="submit"] {
+    font-size: 2rem;
 	margin-top: 1rem;
 	display: inline-block;
 	padding: .8rem 3rem;
 	border-radius: .5rem;
-	border: .2rem solid var(--orange);
-	color: var:(--orange);
+	border: .2rem solid var(--black);
+	color: var:(--black);
 	background: none;
 	cursor: pointer;
 }
         
-input[type="submit"]:hover {
-	background: var(--orange);
+.register .registration-form form input[type="submit"]:hover {
+	background: #9280c5;
 	color: var(--white);
 }
+
+.register .registration-form form input[type="radio"]{
+	transform: scale(1);
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: left;
+}
         
-.error {
+.register .registration-form form .error {
 	color: red;
 	font-size: 12px;
 	display: none;
 }
-.return-link {
-    display: block;
+.register .registration-form a{
+	margin-top: 2rem;
 	font-size: 1.7rem;
     text-align: center;
     margin-bottom: 20px;
-    color: var:(--orange);
-    text-decoration: none;
+    color: #9280c5;
+	font-weight: bold;
+	text-transform: none;
 }
         
-.return-link:hover {
+.register .registration-form a:hover {
 	color: var(--light-color);
 }
 
@@ -714,6 +725,7 @@ input[type="submit"]:hover {
 	padding: 0.1rem solid rgba(0,0,0,.4);
 	border: none;
 	color: var(--pink);
+	font-size: 1.7rem;
 }
 
 .annouce .row form h3{
@@ -852,6 +864,7 @@ input[type="submit"]:hover {
 	padding: 0.1rem solid rgba(0,0,0,.4);
 	border: none;
 	color: var(--pink);
+	font-size: 1.7rem;
 }
 
 .checkout .row form h3{
