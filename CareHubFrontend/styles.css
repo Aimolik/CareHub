@@ -397,26 +397,6 @@ input[type="submit"]:hover {
     margin-top: 20px; 
 }
 
-.custom-shape-divider-bottom-1712429286 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-bottom-1712429286 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-}
-
-.custom-shape-divider-bottom-1712429286 .shape-fill {
-    fill: var(--pony);
-}
-
 /* end */
 
 /* contact starts */
@@ -553,41 +533,121 @@ input[type="submit"]:hover {
 
 /* dashboard */
 
-.check-in-out {
-    margin-top: 20px;
+.container{
+	background: #ffff;
+}
+
+.container .box-container{
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+
+.container .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.container .box-container .welcome{
+	position: relative;
+	text-align: center;
+}
+
+.container .box-container .welcome img{
+	border-radius: 2rem;
+	box-shadow: var(--box-shadow);
+	max-width: 70%; 
+	max-height: 50%;
+    height: auto; 
+    display: center; 
+    margin-top: 20px; 
+}
+
+.container .box-container .welcome p{
+	margin-top: 4rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+}
+
+.container .box-container .box {
+	margin-top: -6rem;
+	border-radius: 2rem;
+	box-shadow: var(--box-shadow);
+	width: calc(33.33% - 20px); 
+    padding: 20px; 
+    box-sizing: border-box; 
     text-align: center;
+	items-align: center;
+	/*outline: .1rem solid rgba(0,0,0,.1);
+	outline-offset: -1rem;*/
+	overflow: hidden;
 }
 
-.check-in-out button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+.container .box-container .box:nth-child(odd){
+	background-color: #b6d7a8;
 }
 
-.check-in-out button:hover {
-    background-color: #45a049;
+.container .box-container .box:nth-child(even){
+	background-color: #e6f2ff;
 }
-.check-in-out {
-    margin-top: 20px;
-    display: grid;
-    place-items: center;
-    height: 100vh; /* Set the height to the full viewport height */
+
+.container .box-container .box h3 {
+    font-size: 2rem;
+	font-weight: bold;
+	margin-top: 0rem;
+	line-height: 1.5;
+	background: -webkit-linear-gradient(#e92b2b, #f4cccc);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
-.check-in-out {
-    margin-top: 10px; /* Adjust the margin-top to move the buttons closer to the welcome message */
+
+.container .box-container .box p{
+	font-size: 1.4rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: var(--light-color);
+	text-transform: none;
+}
+.container .box-container .box .links-container{
+    display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 2rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.container .box-container .box .links-container a {
+    width: 200px;
+    height: 70px;
+    background-color: #fce5cd; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto; /* Set height to auto to adjust based on content */
-    flex-direction: column;
+    border-radius: 10px;
+	font-size: 1.6rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: #6aa84f;
+	text-transform: none;
 }
 
-.check-in-out button {
-    margin: 10px; /* Add margin between the buttons */
+.container .box-container .box .links-container a:hover {
+    color: #0056b3;
+}
+
+.container .box-container .box .links-container img {
+    border-radius: 2rem;
+	box-shadow: var(--box-shadow);
+	width: 100%; 
+    height: auto; 
+    display: block; 
+    margin-top: 20px; 
 }
 
 /* end */
