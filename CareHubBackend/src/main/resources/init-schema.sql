@@ -44,3 +44,13 @@ CREATE TABLE attendances (
     checked_out_time timestamp,
     attendance_status attendance_status NOT NULL
 );
+
+DROP TABLE IF EXISTS vehicles CASCADE;
+
+CREATE TABLE vehicles (
+    vehicle_id SERIAL PRIMARY KEY,
+    guardian_id SERIAL REFERENCES guardians(guardian_id),
+    vehicle_type varchar(255) NOT NULL,
+    license_plate varchar(255) NOT NULL,
+    color varchar(255) NOT NULL
+);
