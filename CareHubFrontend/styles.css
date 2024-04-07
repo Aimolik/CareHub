@@ -334,36 +334,11 @@ input[type="submit"]:hover {
 	line-height: 2;
 }
 
-.custom-shape-divider-bottom-1712429286 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-bottom-1712429286 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px;
-}
-
-.custom-shape-divider-bottom-1712429286 .shape-fill {
-    fill: var(--pony);
-}
-
 /* end */
 
 /* services starts*/
 
 .services .box-container{
-	/*display: grid;
-	flex-wrap: wrap:
-	grid-template-columns: repeat(auto-fit, minmax(10rem 1fr));
-	justify-content: space-between;
-	gap: 2rem;*/
 	display: flex;
     justify-content: space-between; 
     gap: 20px;
@@ -444,4 +419,175 @@ input[type="submit"]:hover {
 
 /* end */
 
+/* contact starts */
 
+.contact .icons-container{
+	margin-top: 4rem;
+	display: flex;
+    justify-content: space-between; 
+    gap: 40px;
+	font-size: 15px;
+	text-transform: none;
+}
+
+.contact .icons-container .icons{
+	padding: 2rem;
+	flex: 1;
+	max-width: 500px;
+	box-shadow: var(--box-shadow);
+	border-radius: 2rem;
+	text-transform: none;
+	text-align: center;
+	outline: .1rem solid rgb(0,0,0,.1);
+	outline-offset: -1rem;
+}
+
+.contact .icons-container .icons i{
+	font-size: 2.5rem;
+	height: 6rem;
+	width: 6rem;
+	color: var(--white);
+	line-height: 6rem;
+	border-radius: 50%;
+	background: var(--orange);
+}
+
+.contact .icons-container .icons h3{
+	font-size: 2.2rem;
+	padding: 1rem 0;
+	color: var(--black);
+}
+
+.contact .icons-container .icons p{
+	font-size: 1.5rem;
+	line-height: 2;
+	color: var(--light-color);
+	text-transform: none;
+}
+
+.contact .row{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 4rem;
+}
+
+.contact .row .image{
+	width: 50%;
+	height: 66%;
+	flex: 1 1 20rem;
+}
+
+.contact .row .image img{
+	width: 100%;
+	height: 66%;
+}
+
+.contact .row form{
+	flex: 1 1 50rem;
+	padding: 2rem;
+	border: 0.1rem solid rgba(0,0,0,.4);
+	box-shadow: var(--box-shadow);
+	border-radius: .5rem;
+}
+
+.contact .row form h3{
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	color: var(--black);
+}
+
+.contact .row form .inputBox{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contact .row form .inputBox input{
+	width: 49%;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea{
+	font-size: 1.6rem;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+
+.contact .row form .inputBox input:focus,
+.contact .row form textarea:focus{
+	border: 0.1rem solid var(--orange);
+}
+
+.contact .row form textarea{
+	height: 15rem;
+	width: 100%;
+	resize: none;
+}
+
+/* end */
+
+/* footer starts */
+
+.footer{
+	background: var(--pony);
+}
+
+.footer .credit{
+	margin-top: 2.5rem;
+	padding: 1rem;
+	padding-top: 2rem;
+	border-top: .1rem solid rgba(0,0,0,.3);
+	text-align: center;
+	color: var(--white);
+	font-size: 2rem;
+}
+
+.footer .credit span{
+	color: var(--orange);
+}
+/* end */
+
+/* dashboard */
+
+.check-in-out {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.check-in-out button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.check-in-out button:hover {
+    background-color: #45a049;
+}
+.check-in-out {
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Set the height to the full viewport height */
+}
+.check-in-out {
+    margin-top: 10px; /* Adjust the margin-top to move the buttons closer to the welcome message */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Set height to auto to adjust based on content */
+    flex-direction: column;
+}
+
+.check-in-out button {
+    margin: 10px; /* Add margin between the buttons */
+}
+
+/* end */
