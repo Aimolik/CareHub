@@ -1,5 +1,6 @@
 package com.group2.CareHub.child;
 
+import com.group2.CareHub.attendance.data.AttendanceStatus;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.child.data.ChildRepository;
 import com.group2.CareHub.child.rest.ChildRequestBody;
@@ -24,17 +25,21 @@ public class ChildService {
 
     public ResponseBody registerChildWithGuardian(ChildRequestBody childRequestBody, int guardianId) {
         log.info("Creating child for guardian id {}", guardianId);
-        ChildEntity response = childRepository.save(childRequestBodyToEntity(childRequestBody, guardianId));
-        if(response == null) {
-            log.error("Failure in saving child entity for guardian id: {}", guardianId);
-            throw new EntityPersistException("Failure in saving child entity for guardian id: " + guardianId);
-        }
+        saveChild(childRequestBodyToEntity(childRequestBody, guardianId));
         log.info("Successfully saved child for guardian id: {}", guardianId);
         return new ResponseBody(200, "Successfully saved child for guardian id: " + guardianId);
     }
 
     public List<ChildEntity> getChildrenByGuardianId(int guardianId) {
         return childRepository.findChildEntitiesByGuardianId(guardianId);
+    }
+
+    public void saveChild(ChildEntity childEntity) {
+        ChildEntity response = childRepository.save(childEntity);
+        if(response == null) {
+            log.error("Failure in saving child entity for guardian id: {}", childEntity.getGuardianId());
+            throw new EntityPersistException("Failure in saving child entity for guardian id: " + childEntity.getGuardianId());
+        }
     }
 
     public ChildEntity getChildByChildId(int childId) {
@@ -46,6 +51,10 @@ public class ChildService {
         return childEntity.get();
     }
 
+    public List<ChildEntity> getChildrenByGuardianIdAndAttendanceStatus(int guardianId, AttendanceStatus attendanceStatus) {
+        return childRepository.findChildEntitiesByGuardianIdAndAttendanceStatus(guardianId, attendanceStatus);
+    }
+
     private ChildEntity childRequestBodyToEntity(ChildRequestBody childRequestBody, int guardianId) {
         return ChildEntity.builder()
                 .guardianId(guardianId)
@@ -53,6 +62,7 @@ public class ChildService {
                 .dateOfBirth(childRequestBody.getDateOfBirth())
                 .address(childRequestBody.getAddress())
                 .medicalInformation(childRequestBody.getMedicalInformation())
+                .attendanceStatus(AttendanceStatus.CHECKED_OUT)
                 .build();
     }
 }

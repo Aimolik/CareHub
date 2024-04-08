@@ -1,5 +1,6 @@
 package com.group2.CareHub.guardian.rest;
 
+import com.group2.CareHub.attendance.data.AttendanceStatus;
 import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.common.ResponseBody;
@@ -52,5 +53,15 @@ public class GuardianController {
     @GetMapping("/{guardianId}/vehicles")
     public List<Vehicle> getVehiclesByGuardianId(@PathVariable int guardianId) {
         return vehicleService.getVehiclesByGuardianId(guardianId);
+    }
+
+    @GetMapping("/{guardianId}/checkin")
+    public List<ChildEntity> getChildrenWithCheckinStatus(@PathVariable int guardianId) {
+        return childService.getChildrenByGuardianIdAndAttendanceStatus(guardianId, AttendanceStatus.CHECKED_IN);
+    }
+
+    @GetMapping("/{guardianId}/checkout")
+    public List<ChildEntity> getChildrenWithCheckoutStatus(@PathVariable int guardianId) {
+        return childService.getChildrenByGuardianIdAndAttendanceStatus(guardianId, AttendanceStatus.CHECKED_OUT);
     }
 }
