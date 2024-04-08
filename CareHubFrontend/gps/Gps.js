@@ -1,7 +1,7 @@
 
-import { GOOGLE_API_KEY } from '../config.js';
 
-console.log(GOOGLE_API_KEY);
+
+const GOOGLE_API_KEY = "AIzaSyAwtFaKWoa-I9GwPlrO_7mCLOqfFa2lMCA"
 
 const container = document.querySelector(".container");
 
