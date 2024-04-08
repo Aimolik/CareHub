@@ -113,90 +113,101 @@ section{
 
 /*registration form*/
 
-.form{
-	max-height: 500px;
-	max-width: 200px;
-	margin: auto;
+.register{
+	background: url('4.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.registration-form,
-.login-form
+.register .registration-form
 {
-	top: 100px;
-	width: 80%;
-    margin-top: 6rem;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-	background: var(--white);
-	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	max-height: 1000px;
+	width: 100%;
+	margin-bottom: 10rem;
+	margin-top: 10rem;
 }
 
-.registration-form.active{
-	transition: .4s linear;
-	
-}
-
-.registration-form .h3,
-.login-form .h3{
-	font-size: 5rem;
+.register .registration-form h3
+{
+	margin-top: 5rem;
+	font-size: 3rem;
 	text-transform: uppercase;
-	color: var(--black);
+	color: #674ea7;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5rem;;
 }
+
+.register .registration-form form{
+	 display: flex;
+	 flex-direction: column;
+ }
         
- label {
+.register .registration-form form label {
 	font-size: 1.7rem; 
+	color: #9280c5;
+	font-weight: bold;
     display: block;
     margin-bottom: 8px;
 }
+
+.register .registration-form form input{
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
         
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-input[type="submit"] {
-    font-szie: 1.7rem;
+.register .registration-form form input[type="submit"] {
+    font-size: 2rem;
 	margin-top: 1rem;
 	display: inline-block;
 	padding: .8rem 3rem;
 	border-radius: .5rem;
-	border: .2rem solid var(--orange);
-	color: var:(--orange);
+	border: .2rem solid var(--black);
+	color: var:(--black);
 	background: none;
 	cursor: pointer;
 }
         
-input[type="submit"]:hover {
-	background: var(--orange);
+.register .registration-form form input[type="submit"]:hover {
+	background: #9280c5;
 	color: var(--white);
 }
+
+.register .registration-form form input[type="radio"]{
+	transform: scale(1);
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: left;
+}
         
-.error {
+.register .registration-form form .error {
 	color: red;
 	font-size: 12px;
 	display: none;
 }
-.return-link {
-    display: block;
+.register .registration-form a{
+	margin-top: 2rem;
 	font-size: 1.7rem;
     text-align: center;
     margin-bottom: 20px;
-    color: var:(--orange);
-    text-decoration: none;
+    color: #9280c5;
+	font-weight: bold;
+	text-transform: none;
 }
         
-.return-link:hover {
+.register .registration-form a:hover {
 	color: var(--light-color);
 }
 
@@ -204,23 +215,117 @@ input[type="submit"]:hover {
 
 /* login starts*/
 
-/*body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f9e4b7;
-            color: #333;
-        }
- 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-  
-        #login {
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-*/
+.login{
+	background: url('4.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login .login-form
+{
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	max-height: 1000px;
+	width: 100%;
+	margin-bottom: 10rem;
+	margin-top: 10rem;
+}
+
+.login .login-form h3
+{
+	margin-top: 5rem;
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: #674ea7;
+    text-align: center;
+    margin-bottom: 5rem;;
+}
+
+.login .login-form form{
+	 display: flex;
+	 flex-direction: column;
+ }
+        
+.login .login-form form label {
+	font-size: 1.7rem; 
+	color: #9280c5;
+	font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login .login-form form input{
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+        
+.login .login-form form input[type="submit"] {
+    font-size: 2rem;
+	margin-top: 1rem;
+	display: inline-block;
+	padding: .8rem 3rem;
+	border-radius: .5rem;
+	border: .2rem solid var(--black);
+	color: var:(--black);
+	background: none;
+	cursor: pointer;
+}
+        
+.login .login-form form input[type="submit"]:hover {
+	background: #9280c5;
+	color: var(--white);
+}
+
+.login .login-form form input[type="radio"]{
+	transform: scale(1);
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: left;
+}
+        
+.login .login-form form .error {
+	color: red;
+	font-size: 12px;
+	display: none;
+}
+
+.login .login-form p{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9280c5;
+	font-weight: bold;
+	text-transform: none;
+}
+
+.login .login-form a{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9280c5;
+	font-weight: bold;
+	text-decoration: underline;
+	text-transform: none;
+}
+        
+.login .login-form a:hover {
+	color: var(--light-color);
+}
+
+
 /* ends */
 
 /* home */
@@ -714,6 +819,7 @@ input[type="submit"]:hover {
 	padding: 0.1rem solid rgba(0,0,0,.4);
 	border: none;
 	color: var(--pink);
+	font-size: 1.7rem;
 }
 
 .annouce .row form h3{
@@ -789,3 +895,237 @@ input[type="submit"]:hover {
         
 
 /* end */
+
+/* checkout starts */
+
+.checkout{
+	background: #ffff;
+}
+
+.checkout .box-container{
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px;
+}
+
+.checkout .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.checkout .box-container .welcome{
+	position: relative;
+	text-align: center;
+}
+
+.checkout .box-container .welcome p{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+}
+
+.checkout .row{
+	background-color: rgba(255,255,255,0.7);
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 4rem;
+	width: 90%;
+	align-items: center;
+	justify-content: center;
+}
+
+.checkout .row .image{
+	max-width: 150%;
+	height: 60rem;
+	flex: 1 1 20rem;
+}
+
+.checkout .row .image img{
+	width: 130%;
+	height: 100%;
+}
+
+.checkout .row form{
+    margin: 0 auto;
+	flex: 0 0 calc(60% - 20px);
+	padding: 0.1rem solid rgba(0,0,0,.4);
+	border: none;
+	color: var(--pink);
+	font-size: 1.7rem;
+}
+
+.checkout .row form h3{
+	font-size: 3rem;
+	padding-bottom: 1rem;
+	color: var(--pink);
+}
+
+.checkout .row form .container{
+	max-width: 1000px;
+	flex: 1 1 20rem;
+	padding: 2rem;
+	border: 0.1rem solid rgba(0,0,0,.4);
+	box-shadow: var(--box-shadow);
+	border-radius: 1rem;
+}
+   
+
+.checkout form .container select{
+	font-size: 1.4rem;
+	width: 25%;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.checkout form .container input[type="date"],
+.checkout form .container input[type="time"] {
+	font-size: 1.4rem;
+	border: 0.1rem solid rgb(0,0,0,.3);
+	border-radius: 0.5rem;
+	padding: 1rem 1.2rem;
+	color: var(--black);
+	margin: .7rem 0;
+}
+        
+.checkout form .container button {
+	margin-top: 2rem;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--pink); 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+.checkout form .container button:hover {
+    background-color: #ff7f7f; 
+}
+
+        
+.checkout .error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.checkout a{
+    display: block;
+	text-align: center;
+	margin-top: 4rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+        
+.checkout a:hover {
+    text-decoration: underline;
+}
+
+/* ends */
+
+/* register vehicle starts */
+
+.vehicle{
+	max-height: 100%;
+	background-color: var(--white);
+}
+
+.vehicle .row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.vehicle .row .image{
+	flex: 1 1 20rem;
+}
+
+.vehicle .row .image img{
+	margin-top: 2rem;
+	width: 90%;
+	height: 50%;
+}
+
+
+.vehicle .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.vehicle .row .content h3{
+	margin-top: 5rem;
+	font-size: 3.5rem;
+	line-height: 1.5;
+	background: -webkit-linear-gradient(#ee9, #f4c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.vehicle .row .content{
+	flex: 1 1 40rem;
+}
+
+.vehicle .row .content{
+	position: relative;
+	text-align: center;
+}
+
+.vehicle .row .content p{
+	margin-top: 4rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+	text-align: left;
+}
+
+
+.vehicle .row .content form input{
+	width: 200px;
+    height: 70px;
+    background-color: #9fc5e8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+	font-size: 1.6rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: var(--black);
+	text-transform: none;
+	cursor: pointer;
+}
+
+.vehicle .row .content form input:hover{
+	color: #0056b3;
+}
+
+.vehicle .row .content a{
+	display: block;
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.vehicle .row .content a:hover{
+	text-decoration: underline;
+}
+
+/* ends */

@@ -19,8 +19,8 @@
 			<a href="carehub.html"> home</a> 
 			<a href="about.html"> about</a>
 			<a href="services.html">services</a> 
-			<a href="login.html">login</a> 
-			<a href="registerchild.html">register your children</a>
+			<a href="../login/login.html">login</a> 
+			<a href="../children/RegisterChild.html">register your children</a>
 			<a href="contact.html">contact</a>
 		</nav>
 		
@@ -32,25 +32,28 @@
 		
 		
 	</header>
-    
-    <div class="login-form">
-        <section id="login">
+
+	<section class="login">
+		<div class="login-form">
             <h3>Login</h3>
             <form action="/login" method="post">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email" required><br><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
-                <input type="submit" value="Login" class="submit">
 
+				<label for="guardian">Guardian</label>
                 <input type="radio" id="guardian" name="account-type" value="guardian" checked="checked">
-                <label for="guardian">Guardian</label>
-                <input type="radio" id="staff" name="account-type" value="staff">
                 <label for="staff">Staff</label>
+                <input type="radio" id="staff" name="account-type" value="staff">
+				
+				<input type="submit" value="Login" class="submit">
+          
             </form>
             <p>New member? <a href="register.html">Register here</a></p>
-        </section>
-    </div>
+       
+		</div>
+	</section>
 	
     <!-- footer -->
 	<section class="footer">
