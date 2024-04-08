@@ -1,6 +1,6 @@
 const BASE_URL = 'http://20.55.39.9:8080';
-import { createFormWithValues, getValueFromForms } from './service/FormService.js';
-import { registerGuardianVehicle } from './service/VehicleService.js';
+import { createFormWithValues, getValueFromForms } from '../service/FormService.js';
+import { registerGuardianVehicle } from '../service/VehicleService.js';
 
 const container = document.querySelector('.subform');
 const submitButton = document.querySelector(".submit");

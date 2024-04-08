@@ -1,5 +1,6 @@
-import { getRegisteredChildrenWithGuardianId } from "./service/ChildService.js";
-import { getJwtTokenPayload } from './service/AccountService.js';
+import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
+import { getJwtTokenPayload } from '../service/AccountService.js';
+import { checkinChild } from "../service/CheckingService.js";
 
 const childSelect = document.getElementById('child-select');
 const submitButton = document.getElementById('checkin-button');
@@ -49,14 +50,14 @@ submitButton.addEventListener('click', async (e) => {
     const childId = childSelect.value;
     const checkInTime = new Date().toISOString();
 
-    const alreadyCheckedIn = Array.from(childSelect.options).some(option => option.value === childId);
-    if (alreadyCheckedIn) {
-        alert('Child has already been checked in.');
-        return;
-    }
+    // const alreadyCheckedIn = Array.from(childSelect.options).some(option => option.value === childId);
+    // if (alreadyCheckedIn) {
+    //     alert('Child has already been checked in.');
+    //     return;
+    // }
 
     try {
-        const result = await registerChild(childId, checkInTime);
+        const result = await checkinChild(childId, checkInTime);
         console.log(result);
         
        if(result && result.statusCode == 200) {
