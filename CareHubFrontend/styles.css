@@ -629,6 +629,7 @@ section{
 	text-align: center;
 	color: var(--white);
 	font-size: 2rem;
+	margin-bottom: 10rem;
 }
 
 .footer .credit span{
@@ -636,7 +637,7 @@ section{
 }
 /* end */
 
-/* dashboard */
+/* guardian dashboard */
 
 .container{
 	background: #ffff;
@@ -753,6 +754,117 @@ section{
     height: auto; 
     display: block; 
     margin-top: 20px; 
+}
+
+/* staff dashboard */
+
+.staff{
+	background: #ffff;
+}
+
+.staff .container{
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.staff h1{
+	margin-top: 10rem;
+	font-size: 3rem;
+	color: var(--orange);
+	text-align: center;
+}
+
+.staff .container .welcome-message{
+	position: relative;
+}
+
+.staff .container .welcome-message h2{
+	font-size: 2.5rem;
+	color: var(--orange);
+	text-align: center;
+	margin-top: 4rem;
+	text-align: left;
+	line-height: 1.5;
+	background: -webkit-linear-gradient(#ee9, #f4c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.staff .container .welcome-message p{
+	margin-top: 0rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: var(--pink);
+	padding: 1rem 2rem;
+}
+
+.staff .container .check-in-out {
+	margin-top: 6rem;
+	border-radius: 2rem;
+	box-shadow: var(--box-shadow);
+	width: calc(50% - 20px); 
+    padding: 20px; 
+    box-sizing: border-box; 
+    text-align: center;
+	items-align: center;
+	outline: .1rem solid rgba(0,0,0,.1);
+	outline-offset: -1rem;
+	overflow: hidden;
+}
+
+.staff .container .check-in-out:nth-child(odd){
+	background-color: #b6d7a8;
+}
+
+.staff .container .check-in-out:nth-child(even){
+	background-color: #e6f2ff;
+}
+
+.staff .container .check-in-out h3 {
+    font-size: 2rem;
+	font-weight: bold;
+	margin-top: 0rem;
+	line-height: 1.5;
+	color: #a64d79;
+}
+
+.staff .container .check-in-out p{
+	font-size: 1.4rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: var(--light-color);
+	text-transform: none;
+}
+.staff .container .check-in-out .links-container{
+    display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	margin-top: 2rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.staff .container .check-in-out .links-container button {
+    width: 200px;
+    height: 70px;
+    background-color: #fff2cc; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+	font-size: 1.6rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: #741b47;
+	text-transform: none;
+	cursor: pointer;
+}
+
+.staff .container .check-in-out .links-container button:hover {
+    color: #0056b3;
 }
 
 /* end */
