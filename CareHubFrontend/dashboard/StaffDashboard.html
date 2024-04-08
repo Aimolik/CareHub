@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daycare Management System - Staff Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js">
+  <link rel="stylesheet" href="styles.css">
+ 
 </head>
 <body>
-<header>
-    <h1>Daycare Management System</h1>
-</header>
-<div class="container">
-    <aside>
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="guardians.php">Children Management</a></li>
-            <li><a href="#">Guardians</a></li>
-            <li><a href="../schedule/schedule.html">Schedules</a></li>
-            <li><a href="#">Payments</a></li>
-            <li><a class="logout-button" href="../login/Login.html">Logout</a></li>
-        </ul>
-    </aside>
-    <main>
-        <h2 class="welcome-message">Welcome, Staff!</h2>
-        <p>This is your dashboard interface. You can manage various aspects of the daycare from here.</p>
-        <div class="check-in-out">
-            <button id="check-in">Check-in</button>
-            <button id="check-out">Check-out</button>
-        </div>
-    </main>
-</div>
+
+	<header class= "header">
+		<a href="Carehub.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			<a href="guardians.php">Children Management</a>
+			<a href="#">Guardians</a> 
+			<a href="#">Schedules</a>
+			<a href="#">Payments</a>
+			<a class="logout-button" href="../login/Login.html">Logout</a>
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-user" id="login-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+<body>
+	<section class="staff" id="staff">
+		<h1 class="heading">Daycare Management System</h1>
+
+		<div class="container">
+			<div class="welcome-message">
+			<h2>Welcome, Staff!</h2>
+			<p>This is your dashboard interface. In this dashboard, staff members can efficiently manage daycare operations, including schedules, activities, attendance, and parent communication. It's a comprehensive tool for ensuring a safe, nurturing environment where children thrive and grow.</p>
+			</div>
+		</div>
+    
+		<div class="container">
+        
+			<div class="check-in-out">
+				<h3>Children check-in</h3>
+				<p>Staff members can promptly register a child's arrival at the daycare center, providing essential support in instances where parents are unavailable or immediate assistance is required..</p>
+				<div class="links-container"> 
+						<button id="check-in">Check-in</button>
+				</div>
+			</div>
+			
+			<div class="check-in-out">
+				<h3>Children check-out</h3>
+				<p>This is your dashboard interface. You can manage various aspects of the daycare from here.</p>
+				<div class="links-container"> 
+						<button id="check-out">Check-out</button>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
 <script type="module" src="./StaffDashboard.js"></script>
 </body>
 </html>
