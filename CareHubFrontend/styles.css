@@ -969,7 +969,7 @@ footer{
 	margin: .7rem 0;
 }
         
-.annouce form .container button[type="submit"] {
+.annouce form .container button{
 	margin-top: 2rem;
     width: 100%;
     padding: 10px;
@@ -980,7 +980,7 @@ footer{
     cursor: pointer;
 }
 
-.annouce form .container button[type="submit"]:hover {
+.annouce form .container button:hover {
     background-color: #ff7f7f; 
 }
 
@@ -992,6 +992,7 @@ footer{
 }
 
 .annouce a{
+	font-size: 1.5rem;
     display: block;
 	text-align: center;
 	margin-top: 4rem;
@@ -1131,6 +1132,7 @@ footer{
 }
 
 .checkout a{
+	font-size: 1.5rem;
     display: block;
 	text-align: center;
 	margin-top: 4rem;
