@@ -617,7 +617,7 @@ section{
 
 /* footer starts */
 
-.footer{
+footer{
 	background: var(--pony);
 }
 
@@ -627,9 +627,8 @@ section{
 	padding-top: 2rem;
 	border-top: .1rem solid rgba(0,0,0,.3);
 	text-align: center;
-	color: var(--white);
+	color: var(--black);
 	font-size: 2rem;
-	margin-bottom: 10rem;
 }
 
 .footer .credit span{
