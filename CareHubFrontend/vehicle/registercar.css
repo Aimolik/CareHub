@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+	--orange: #00afb9;
+	--pink: #e9768f;
+	--coral: #f07167;
+	--black: #1d1c1c;
+	--white: #fff;
+	--pony: #fed9b7;
+	--light-color: #666;
+	--box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+	outline: none; border: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: all .2s linear; 
+}
+
+html{
+	font-size: 62.5%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+section{
+	padding: 3rem 7%;
+}
+
+.heading{
+	font-size: 4rem;
+	color: var(--black);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bolder;
+	margin-top: 6rem;
+}
+
+.heading span{
+	color: var(--orange);
+	text-transform: uppercase;
+}
+
+
+.btn{
+	font-size: 1.7rem;
+	margin-top: 1rem;
+	display: inline-block;
+	padding: .8rem 3rem;
+	border-radius: .5rem;
+	border: .2rem solid var(--orange);
+	color: var(--orange);
+	background: none;
+	cursor: pointer;
+}
+
+.btn:hover{
+	background: var(--orange);
+	color: var(--white);
+}
+
+/*header*/
+
+.header{
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 9%;
+	background: var(--white);
+	box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+	font-size: 2.5rem;
+	font-weight: bolder;
+	color: var(--black);
+}
+
+.header .logo i{
+	color: var(--orange);
+}
+
+.header .navbar a{
+	font-size: 1.7rem;
+	margin: 0 1rem;
+	color: var(--black);
+}
+
+.header .navbar a:hover,
+.header .icons div:hover{
+	color: var(--orange);
+}
+
+.header .icons div{
+	font-size: 2.5rem;
+	margin-left: 1.7rem;
+	color: var(--black);
+	cursor: pointer;
+}
+
+#menu-btn{
+	display: none;
+}
+
+/* header ends */
+
+/* icons */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.menu-icon:hover .dropdown-content {
+    display: block;
+}
+/*end of icon */
+
+
+/* register vehicle starts */
+
+.vehicle{
+	max-height: 100%;
+	background-color: var(--white);
+}
+
+.vehicle .row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.vehicle .row .image{
+	flex: 1 1 20rem;
+}
+
+.vehicle .row .image img{
+	margin-top: 2rem;
+	width: 90%;
+	height: 50%;
+}
+
+
+.vehicle .heading h1{
+	font-size: 2.5rem;
+	color: --var(-orange);
+	text-align: center;
+}
+
+.vehicle .row .content h3{
+	margin-top: 5rem;
+	font-size: 3.5rem;
+	line-height: 1.5;
+	background: -webkit-linear-gradient(#ee9, #f4c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.vehicle .row .content{
+	flex: 1 1 40rem;
+}
+
+.vehicle .row .content{
+	position: relative;
+	text-align: center;
+}
+
+.vehicle .row .content p{
+	margin-top: 4rem;
+	font-size: 1.7rem;
+	text-transform: none;
+	line-height: 1.8;
+	color: #ef8989;
+	padding: 1rem 2rem;
+	text-align: left;
+}
+
+
+.vehicle .row .content form input{
+	width: 200px;
+    height: 70px;
+    background-color: #9fc5e8; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+	font-size: 1.6rem;
+	margin-top: .5rem;
+	line-height: 2;
+	color: var(--black);
+	text-transform: none;
+	cursor: pointer;
+}
+
+.vehicle .row .content form input:hover{
+	color: #0056b3;
+}
+
+.vehicle .row .content a{
+	display: block;
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.vehicle .row .content a:hover{
+	text-decoration: underline;
+}
+
+/* ends */
+
+/* footer starts */
+
+.footer{
+	background: var(--pony);
+}
+
+.footer .credit{
+	margin-top: 2.5rem;
+	padding: 1rem;
+	padding-top: 2rem;
+	border-top: .1rem solid rgba(0,0,0,.3);
+	text-align: center;
+	color: var(--black);
+	font-size: 2rem;
+}
+
+.footer .credit span{
+	color: var(--orange);
+}
+/* end */
+
