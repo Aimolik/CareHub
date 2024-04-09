@@ -199,7 +199,7 @@ section{
 }
 
 
-.vehicle .row .content form input[type="submit"]{
+.vehicle .row .content input[type="submit"]{
 	width: 200px;
     height: 70px;
     background-color: #9fc5e8; 
@@ -215,7 +215,7 @@ section{
 	cursor: pointer;
 }
 
-.vehicle .row .content form input[type="submit"]:hover{
+.vehicle .row .content input[type="submit"]:hover{
 	color: #0056b3;
 }
 
