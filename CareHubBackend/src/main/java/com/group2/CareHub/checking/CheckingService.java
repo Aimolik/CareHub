@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -27,12 +28,12 @@ public class CheckingService {
 
     public ResponseBody checkIn(CheckingRequestBody checkingRequestBody) {
         ChildEntity childEntity = childService.getChildByChildId(checkingRequestBody.getChildId());
-        log.info("Checking in child with id {}", childEntity.getChildId());
-        Optional<AttendanceEntity> attendanceEntity = attendanceService
-                .getAttendanceRecord(childEntity.getChildId(), AttendanceStatus.CHECKED_IN);
-        if (attendanceEntity.isPresent()) {
-            return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is already checked in, please check them out first!");
+        if(childEntity.getAttendanceStatus() == AttendanceStatus.CHECKED_IN) {
+            return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is already checked in!");
         }
+        log.info("Checking in child with id {}", childEntity.getChildId());
+        childEntity.setAttendanceStatus(AttendanceStatus.CHECKED_IN);
+        childService.saveChild(childEntity);
         attendanceService.createAttendanceRecord(childEntity.getChildId(), AttendanceStatus.CHECKED_IN);
         return new ResponseBody(200, "Child of id " + childEntity.getChildId() + " has been checked in!");
     }
@@ -40,15 +41,13 @@ public class CheckingService {
     public ResponseBody checkout(CheckingRequestBody checkingRequestBody) {
         ChildEntity childEntity = childService.getChildByChildId(checkingRequestBody.getChildId());
         log.info("Checking out child with id {}", childEntity.getChildId());
-        Optional<AttendanceEntity> attendanceEntity = attendanceService
-                .getAttendanceRecord(childEntity.getChildId(), AttendanceStatus.CHECKED_IN);
-        if(attendanceEntity.isEmpty()) {
-            return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is not checked in, please check them in first!");
+        if(childEntity.getAttendanceStatus() == AttendanceStatus.CHECKED_OUT) {
+            return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is already checked out!");
         }
-        AttendanceEntity attendance = attendanceEntity.get();
-        attendance.setCheckedOutTime(LocalDateTime.now());
-        attendance.setAttendanceStatus(AttendanceStatus.CHECKED_OUT);
-        attendanceService.saveAttendanceRecord(attendance);
+        log.info("Checking in child with id {}", childEntity.getChildId());
+        childEntity.setAttendanceStatus(AttendanceStatus.CHECKED_OUT);
+        childService.saveChild(childEntity);
+        attendanceService.createAttendanceRecord(childEntity.getChildId(), AttendanceStatus.CHECKED_OUT);
         return new ResponseBody(200, "Child of id " + childEntity.getChildId() + " has been checked out!");
     }
 }

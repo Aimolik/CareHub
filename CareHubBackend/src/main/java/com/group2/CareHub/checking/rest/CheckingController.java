@@ -2,23 +2,23 @@ package com.group2.CareHub.checking.rest;
 
 import com.group2.CareHub.account.AccountDetails;
 import com.group2.CareHub.checking.CheckingService;
+import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.common.ResponseBody;
 import com.group2.CareHub.common.enumeration.CheckingType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/checking")
 public class CheckingController {
 
     private final CheckingService checkingService;
+    private final ChildService childService;
 
-    public CheckingController(CheckingService checkingService) {
+    public CheckingController(CheckingService checkingService, ChildService childService) {
         this.checkingService = checkingService;
+        this.childService = childService;
     }
 
     @PostMapping

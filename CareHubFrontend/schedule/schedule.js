@@ -1,5 +1,5 @@
-import { getRegisteredChildrenWithGuardianId } from "./service/ChildService.js";
-import { getJwtTokenPayload } from './service/AccountService.js';
+import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
+import { getJwtTokenPayload } from '../service/AccountService.js';
 const BASE_URL = 'http://20.55.39.9:8080';
 const container = document.querySelector('.child-container');
 

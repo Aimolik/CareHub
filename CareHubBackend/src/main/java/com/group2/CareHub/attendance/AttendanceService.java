@@ -39,7 +39,7 @@ public class AttendanceService {
         return response;
     }
 
-    public Optional<AttendanceEntity> getAttendanceRecord(int childId, AttendanceStatus attendanceStatus) {
-        return attendanceRepository.findAttendanceEntityByChildIdAndAttendanceStatus(childId, attendanceStatus);
+    public Optional<AttendanceEntity> getAttendanceRecordByChildIdWithCheckedIn(int childId) {
+        return attendanceRepository.findAttendanceEntityByChildIdAndAttendanceStatus(childId, AttendanceStatus.CHECKED_IN);
     }
 }
