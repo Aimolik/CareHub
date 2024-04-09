@@ -7,4 +7,6 @@ import java.util.Optional;
 public interface AttendanceRepository extends JpaRepository<AttendanceEntity, Integer> {
 
     Optional<AttendanceEntity> findAttendanceEntityByChildIdAndAttendanceStatus(int childId, AttendanceStatus attendanceStatus);
+
+
 }

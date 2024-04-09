@@ -1,119 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register child</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f9e4b7;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        input[type="date"],
-        input[type="time"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #ff9f9f; /* Same as header background color */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        input[type="submit"]:hover {
-            background-color: #ff7f7f; /* Darker shade for hover effect */
-        }
-        
-        .error {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
-        .return-link {
-            display: block;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .return-link:hover {
-            text-decoration: underline;
-        }
-        
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-In</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js">
+  <link rel="stylesheet" href="../styles.css">
+ 
 </head>
 <body>
- <form action="" method="post">
-    <header>
-        <h1>Check-In</h1>
-    </header>
+	<header class= "header">
+		<a href="Carehub.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			<a href="../carehub.html"> home</a> 
+			<a href="../services.html">services</a> 
+			<a href="../contact.html">contact</a>
+			<a href="../carehub.html">logout</a> 
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-user" id="login-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+	
+	<section class="annouce" id="annouce">
+		<h1 class="heading"><span>Check-In</span> </h1>
+		
+        <div class="box-container">
+			<div class="welcome">
+			<p>Welcome to the check-in feature, where you can conveniently register your child's arrival and ensure a seamless transition into our daycare center's nurturing environment. With just a few clicks, you'll initiate your child's engaging and enriching day, knowing they're in safe hands.</p>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="image">
+				<img src="../images/checkin.gif" alt="">
+			</div>
+			
+			<form action="" method="post">
+				<h3>check-in</h3>
 
-    <div class="container">
-        <form id="checkin-form">
-            <label for="child-select">Child:</label>
-            <select id="child-select">
-                </select>
-                <label for="checkin-date">Date:</label>
-                <input type="date" id="checkin-date" name="checkin-date">
+				<div class="container">
+					<form id="checkin-form">
+						<label for="child-select">Child:</label>
+						<select id="child-select">
+						</select>
+							<label for="checkin-date">Date:</label>
+							<input type="date" id="checkin-date" name="checkin-date">
 
-                <select id="checkin-time" name="checkin-time">
-                    <option value="07:00">7:00 AM</option>
-                    <option value="08:00">8:00 AM</option>
-                    <option value="09:00">9:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                </select>
+							<select id="checkin-time" name="checkin-time">
+								<option value="07:00">7:00 AM</option>
+								<option value="08:00">8:00 AM</option>
+								<option value="09:00">9:00 AM</option>
+								<option value="10:00">10:00 AM</option>
+								<option value="11:00">11:00 AM</option>
+								<option value="12:00">12:00 PM</option>
+							</select>
                 
-            <button type="submit">Check In</button>
-        </form>
-    </div>
-    <a href="../dashboard/GuardianDashboard.html" class="return-link">← Return to dashboard</a>
-    <footer>
-        <p>&copy; 2024 CareHub. All rights reserved.</p>
-    </footer>
-
+						<button type="submit" id="checkin-button">Check-in</button>
+					</form>
+				</div>
+			</form>
+		</div>
+		
+		<a href="../dashboard/GuardianDashboard.html" class="return-link">← Return to dashboard</a>
+	
+	</section>
+	
+    <!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
     <script type="module" src="./checkin.js"></script>
 </body>
 </html>

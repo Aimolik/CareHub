@@ -17,7 +17,7 @@ const register = async (account) => {
   console.log(response);
   window.alert(response.message);
   if(response.statusCode === 200) {
-    window.location.href = "./Login.html";
+    window.location.href = "./login.html";
   }
 };
 

@@ -9,7 +9,9 @@ import com.group2.CareHub.guardian.rest.GuardianRequestBody;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -38,6 +40,10 @@ public class GuardianService {
         }
         log.info("Successfully saved guardian account of email: {}", guardianRequestBody.getEmail());
         return new ResponseBody(200, "Successfully saved guardian account of email: " + guardianRequestBody.getEmail());
+    }
+
+    public List<Guardian> getGuardians() {
+        return guardianRepository.findAll().stream().map(guardianDataMapper::guardianEntityToGuardian).toList();
     }
 
     public Guardian getGuardianById(int guardianId) {

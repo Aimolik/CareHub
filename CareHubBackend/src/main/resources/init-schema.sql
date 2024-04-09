@@ -23,19 +23,20 @@ CREATE TABLE staffs (
 
 DROP TABLE IF EXISTS children CASCADE;
 
+DROP TYPE IF EXISTS attendance_status CASCADE;
+CREATE TYPE attendance_status AS ENUM ('CHECKED_IN', 'CHECKED_OUT');
+
 CREATE TABLE children (
     child_id SERIAL PRIMARY KEY,
     guardian_id SERIAL REFERENCES guardians(guardian_id),
     name varchar(255) NOT NULL,
     date_of_birth date NOT NULL,
     address varchar(255) NOT NULL,
-    medical_information varchar(255) NOT NULL
+    medical_information varchar(255) NOT NULL,
+    attendance_status attendance_status NOT NULL
 );
 
 DROP TABLE IF EXISTS attendances CASCADE;
-
-DROP TYPE IF EXISTS attendance_status;
-CREATE TYPE attendance_status AS ENUM ('CHECKED_IN', 'CHECKED_OUT');
 
 CREATE TABLE attendances (
     attendance_id SERIAL PRIMARY KEY,
@@ -43,4 +44,14 @@ CREATE TABLE attendances (
     checked_in_time timestamp NOT NULL,
     checked_out_time timestamp,
     attendance_status attendance_status NOT NULL
+);
+
+DROP TABLE IF EXISTS vehicles CASCADE;
+
+CREATE TABLE vehicles (
+    vehicle_id SERIAL PRIMARY KEY,
+    guardian_id SERIAL REFERENCES guardians(guardian_id),
+    vehicle_type varchar(255) NOT NULL,
+    license_plate varchar(255) NOT NULL,
+    color varchar(255) NOT NULL
 );

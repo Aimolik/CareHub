@@ -1,6 +1,7 @@
 package com.group2.CareHub.child.data;
 
 
+import com.group2.CareHub.attendance.data.AttendanceStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,4 +26,10 @@ public class ChildEntity {
     private LocalDate dateOfBirth;
     private String address;
     private String medicalInformation;
+    @Enumerated(EnumType.STRING)
+    private AttendanceStatus attendanceStatus;
+
+    public void setAttendanceStatus(AttendanceStatus attendanceStatus) {
+        this.attendanceStatus = attendanceStatus;
+    }
 }
