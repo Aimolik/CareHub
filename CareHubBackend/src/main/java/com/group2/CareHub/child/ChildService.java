@@ -55,6 +55,10 @@ public class ChildService {
         return childRepository.findChildEntitiesByGuardianIdAndAttendanceStatus(guardianId, attendanceStatus);
     }
 
+    public List<ChildEntity> getChildren() {
+        return childRepository.findAll();
+    }
+
     private ChildEntity childRequestBodyToEntity(ChildRequestBody childRequestBody, int guardianId) {
         return ChildEntity.builder()
                 .guardianId(guardianId)
