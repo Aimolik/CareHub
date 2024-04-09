@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareHub - View children</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="viewchild.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Children</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="viewchild.css">
 </head>
 <body>
-<header>
-    <h1>Your registered children</h1>
-</header>
-<div class="container">
-    <aside>
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="./RegisterChild.html">Register child</a></li>
-            <li><a href="./ViewChildren.html">View children</a></li>
-            <li><a class="logout-button" href="../login/Login.html">Logout</a></li>
-        </ul>
-    </aside>
+	<header class= "header">
+		<a href="./GuardianDashboard.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-sign-out-alt logout-button" id="logout-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+        
+	</header>
+	
+	<section class="viewchild" id="viewchild">
+	
+    
+	<h1 class="heading"><span>Children's Information </span></h1>
+	<div class="child">
+		<p>Welcome, you can find detailed profiles of your precious ones here. Explore their development milestones, health records, and any special preferences, all in one convenient place. Stay informed and engaged in your child's daycare journey like never before</p>
+		
+                <ul class="child-container">
 
-    <ul class="child-container">
-
-      </ul>
-</div>
+                </ul>
+	</div>
+	
+	</section>
+	
+    <!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
 <script type="module" src="./ViewChildren.js"></script>
-<a href="../dashboard/GuardianDashboard.html" class="return-link">← Return to dashboard</a>
 </body>
 </html>
