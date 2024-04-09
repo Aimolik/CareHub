@@ -1,6 +1,7 @@
 package com.group2.CareHub.child.rest;
 
 import com.group2.CareHub.account.AccountDetails;
+import com.group2.CareHub.attendance.data.AttendanceStatus;
 import com.group2.CareHub.child.ChildService;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.common.ResponseBody;
@@ -48,5 +49,15 @@ public class ChildController {
     @GetMapping
     public List<ChildEntity> getChildren() {
         return childService.getChildren();
+    }
+
+    @GetMapping("/checkin")
+    public List<ChildEntity> getChildrenByCheckedIn() {
+        return childService.getChildrenByAttendanceStatus(AttendanceStatus.CHECKED_IN);
+    }
+
+    @GetMapping("/checkout")
+    public List<ChildEntity> getChildrenByCheckedOut() {
+        return childService.getChildrenByAttendanceStatus(AttendanceStatus.CHECKED_OUT);
     }
 }

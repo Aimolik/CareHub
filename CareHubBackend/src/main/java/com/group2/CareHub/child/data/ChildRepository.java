@@ -13,4 +13,6 @@ public interface ChildRepository extends JpaRepository<ChildEntity, Integer>{
     Optional<ChildEntity> findChildEntityByChildId(int childId);
 
     List<ChildEntity> findChildEntitiesByGuardianIdAndAttendanceStatus(int guardianId, AttendanceStatus attendanceStatus);
+
+    List<ChildEntity> findChildEntitiesByAttendanceStatus(AttendanceStatus attendanceStatus);
 }
