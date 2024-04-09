@@ -64,4 +64,9 @@ public class GuardianController {
     public List<ChildEntity> getChildrenWithCheckoutStatus(@PathVariable int guardianId) {
         return childService.getChildrenByGuardianIdAndAttendanceStatus(guardianId, AttendanceStatus.CHECKED_OUT);
     }
+
+    @GetMapping
+    public List<Guardian> getGuardians() {
+        return guardianService.getGuardians();
+    }
 }

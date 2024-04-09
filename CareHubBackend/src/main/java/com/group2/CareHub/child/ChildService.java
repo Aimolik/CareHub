@@ -59,12 +59,16 @@ public class ChildService {
 
     public ResponseBody deleteChild(int childId, AccountDetails accountDetails) {
         ChildEntity childEntity = getChildByChildId(childId);
-        if(accountDetails.getRole() == Role.STAFF || (accountDetails.getRole() == Role.GUARDIAN && childEntity.getGuardianId() == accountDetails.getId())) {
+        if (accountDetails.getRole() == Role.STAFF || (accountDetails.getRole() == Role.GUARDIAN && childEntity.getGuardianId() == accountDetails.getId())) {
             childRepository.delete(childEntity);
             return new ResponseBody(200, "Child with id " + childId + " has been deleted");
         } else {
             return new ResponseBody(403, "You do not have permission to delete this child, either you are not a staff, or this is not your child!");
         }
+    }
+
+    public List<ChildEntity> getChildren() {
+        return childRepository.findAll();
     }
 
     private ChildEntity childRequestBodyToEntity(ChildRequestBody childRequestBody, int guardianId) {
