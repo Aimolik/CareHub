@@ -6,23 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register vehicle</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="registercar.css">
  
 </head>
 <body>
 	<header class= "header">
-		<a href="Carehub.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		<a href="./GuardianDashboard.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
 		
 		<nav class="navbar">
-			<a href="carehub.html"> home</a> 
-			<a href="services.html">services</a> 
-			<a href="contact.html">contact</a>
-			<a href="carehub.html">logout</a> 
+			
 		</nav>
 		
 		<div class="icons">
-			<div class="fas fa-user" id="login-btn"></div> 
+			<div class="fas fa-sign-out-alt logout-button" id="logout-btn"></div> 
 			<div class="fas fa-bars" id="menu-btn"></div>
 		</div>
 			
@@ -35,7 +31,7 @@
 		<div class="row">
 		
 			<div class="image">
-				<img src="regvehicle.jpg" alt="">
+				<img src="./img/regvehicle.jpg" alt="">
 			</div>
 		
 			<div class="content">
@@ -46,13 +42,12 @@
 				</form>
 					<form action="http://20.55.39.9:8080/api/vehicle" method="post">
 
-						<div class="subform">
+						<div class="subbie">
 
 						</div>
 
 					<input type="submit" value="Register" class="submit">
 					</form>
-				<a href="./GuardianDashboard.html" class="return-link">← Return to dashboard</a>
 			</div>
 		
 		
@@ -64,6 +59,6 @@
 		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
 	</section>
 	
-<script type="module" src="./GuardianDashboard.js"></script>
+<script type="module" src="./RegisterVehicle.js"></script>
 </body>
 </html>
