@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/child")
 public class ChildController {
@@ -33,6 +35,11 @@ public class ChildController {
     @GetMapping("/{childId}")
     public ChildEntity getChild(@PathVariable int childId) {
         return childService.getChildByChildId(childId);
+    }
+
+    @GetMapping
+    public List<ChildEntity> getChildren() {
+        return childService.getChildren();
     }
 
     @PutMapping("/{childId}")
