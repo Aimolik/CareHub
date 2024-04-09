@@ -35,9 +35,10 @@ public class ChildController {
         return childService.getChildByChildId(childId);
     }
 
-    @PutMapping("/{childId}")
-    public ChildEntity updateChild(@PathVariable int childId, @RequestBody @Valid ChildRequestBody childRequestBody) {
-
-        return null;
+    @DeleteMapping("/{childId}")
+    public ResponseEntity<ResponseBody> deleteChild(@PathVariable int childId) {
+        AccountDetails accountDetails = (AccountDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        ResponseBody responseBody = childService.deleteChild(childId, accountDetails);
+        return ResponseEntity.ok(responseBody);
     }
 }

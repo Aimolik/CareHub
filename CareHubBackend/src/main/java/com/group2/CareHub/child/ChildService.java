@@ -1,10 +1,12 @@
 package com.group2.CareHub.child;
 
+import com.group2.CareHub.account.AccountDetails;
 import com.group2.CareHub.attendance.data.AttendanceStatus;
 import com.group2.CareHub.child.data.ChildEntity;
 import com.group2.CareHub.child.data.ChildRepository;
 import com.group2.CareHub.child.rest.ChildRequestBody;
 import com.group2.CareHub.common.ResponseBody;
+import com.group2.CareHub.common.enumeration.Role;
 import com.group2.CareHub.exception.exceptions.EntityNotFoundException;
 import com.group2.CareHub.exception.exceptions.EntityPersistException;
 import lombok.extern.slf4j.Slf4j;
@@ -53,6 +55,16 @@ public class ChildService {
 
     public List<ChildEntity> getChildrenByGuardianIdAndAttendanceStatus(int guardianId, AttendanceStatus attendanceStatus) {
         return childRepository.findChildEntitiesByGuardianIdAndAttendanceStatus(guardianId, attendanceStatus);
+    }
+
+    public ResponseBody deleteChild(int childId, AccountDetails accountDetails) {
+        ChildEntity childEntity = getChildByChildId(childId);
+        if(accountDetails.getRole() == Role.STAFF || (accountDetails.getRole() == Role.GUARDIAN && childEntity.getGuardianId() == accountDetails.getId())) {
+            childRepository.delete(childEntity);
+            return new ResponseBody(200, "Child with id " + childId + " has been deleted");
+        } else {
+            return new ResponseBody(403, "You do not have permission to delete this child, either you are not a staff, or this is not your child!");
+        }
     }
 
     private ChildEntity childRequestBodyToEntity(ChildRequestBody childRequestBody, int guardianId) {
