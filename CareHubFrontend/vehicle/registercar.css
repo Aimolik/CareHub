@@ -178,7 +178,7 @@ section{
 }
 
 .vehicle .row .content p{
-	margin-top: 4rem;
+	margin-top: 0rem;
 	font-size: 1.7rem;
 	text-transform: none;
 	line-height: 1.8;
@@ -187,8 +187,19 @@ section{
 	text-align: left;
 }
 
+.vehicle .row .content .subform{
+	display: flex;
+	 flex-direction: column;
+	 width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
 
-.vehicle .row .content form input{
+
+.vehicle .row .content form input[type="submit"]{
 	width: 200px;
     height: 70px;
     background-color: #9fc5e8; 
@@ -204,7 +215,7 @@ section{
 	cursor: pointer;
 }
 
-.vehicle .row .content form input:hover{
+.vehicle .row .content form input[type="submit"]:hover{
 	color: #0056b3;
 }
 
@@ -244,4 +255,3 @@ section{
 	color: var(--orange);
 }
 /* end */
-
