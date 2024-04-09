@@ -212,12 +212,14 @@ section{
   }
   
   #child-table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
+	background-color:(--light-color);
   }
   
   #child-table th,
   #child-table td {
+	max-width: 80%;
     border: 1px solid #ddd;
     padding: 10px;
   }
@@ -229,11 +231,69 @@ section{
 ul li {
     margin-bottom: 10px;
 }
-ul li a {
-    color: #333;
-    text-decoration: none;
+
+.viewchild .child a{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9280c5;
+	font-weight: bold;
+	text-transform: none;
 }
-ul li a:hover {
-    text-decoration: underline;
+        
+.viewchild .child a:hover {
+	color: var(--light-color);
 }
 
+/* staff view */
+.staffview{
+	max-height: 100%;
+	background-color: var(--white);
+	align-items: center;
+}
+
+.staffview .staff{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.staffview .heading{
+	font-size: 3.5rem;
+	color: var(--black);
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-weight: bolder;
+	margin-top: 8rem;
+}
+
+.staffview .heading h1{
+	text-align: center;
+}
+
+.staffview .heading span{
+	color: var(--orange);
+	text-transform: uppercase;
+	text-align: center;
+	align-items: center;
+}
+
+
+.staffview .staff a{
+	margin-top: 2rem;
+	font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9280c5;
+	font-weight: bold;
+	text-transform: none;
+}
+        
+.staffview .staff a:hover {
+	color: var(--light-color);
+}
