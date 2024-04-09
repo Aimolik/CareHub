@@ -1,4 +1,4 @@
-import { getRegisteredChildrenWithGuardianId } from "../service/ChildService.js";
+import { getRegisteredChildrenWithGuardianId, getCheckedOutChildren } from "../service/ChildService.js";
 import { getJwtTokenPayload } from '../service/AccountService.js';
 import { checkinChild } from "../service/CheckingService.js";
 
@@ -11,8 +11,9 @@ console.log('Token:', token);
 
 const populateChildDropdown = async () => {
     try {
-        const response = await getRegisteredChildrenWithGuardianId(payload.accountId);
-
+        //const response = await getRegisteredChildrenWithGuardianId(payload.accountId);
+        const response = await getCheckedOutChildren(payload.accountId);
+        console.log(response);
         for (let i = 0; i < response.length; i++) {
             const childData = typeof response[i] === 'string' ? JSON.parse(response[i]) : response[i];
             const option = document.createElement('option');

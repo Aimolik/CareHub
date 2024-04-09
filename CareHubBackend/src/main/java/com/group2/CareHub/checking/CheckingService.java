@@ -29,6 +29,7 @@ public class CheckingService {
     public ResponseBody checkIn(CheckingRequestBody checkingRequestBody) {
         ChildEntity childEntity = childService.getChildByChildId(checkingRequestBody.getChildId());
         if(childEntity.getAttendanceStatus() == AttendanceStatus.CHECKED_IN) {
+            log.info("Child of id {} is already checked in!", childEntity.getChildId());
             return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is already checked in!");
         }
         log.info("Checking in child with id {}", childEntity.getChildId());
@@ -42,6 +43,7 @@ public class CheckingService {
         ChildEntity childEntity = childService.getChildByChildId(checkingRequestBody.getChildId());
         log.info("Checking out child with id {}", childEntity.getChildId());
         if(childEntity.getAttendanceStatus() == AttendanceStatus.CHECKED_OUT) {
+            log.error("Child of id {} is already checked out!", childEntity.getChildId());
             return new ResponseBody(400, "Child of id " + childEntity.getChildId() + " is already checked out!");
         }
         log.info("Checking in child with id {}", childEntity.getChildId());
