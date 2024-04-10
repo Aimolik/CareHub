@@ -46,3 +46,13 @@ const clearContainer = () => {
 }
 
 createEmbeddedMap();
+
+const logoutButton = document.querySelector('.logout-button');
+logoutButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('Logout button clicked');
+  localStorage.removeItem('token');
+  console.log('Token removed');
+  window.location.href = "/login.html";
+  console.log('Redirecting to login.html');
+});
