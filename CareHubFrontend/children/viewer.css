@@ -31,51 +31,72 @@ section{
 	padding: 3rem 7%;
 }
 
-.viewchild{
-	max-height: 100%;
-	background-color: var(--white);
-	align-items: center;
+.child-container {
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
 }
 
-.viewchild .child{
-	display: flex;
-	text-align: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 2rem;
+.child-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.viewchild .heading{
-	font-size: 3.5rem;
-	color: var(--black);
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	text-transform: uppercase;
-	font-weight: bolder;
-	margin-top: 8rem;
+.child-info {
+    margin-bottom: 5px;
 }
 
-.viewchild .heading h1{
-	text-align: center;
+.child-label {
+    font-weight: bold;
+    display: inline-block;
+    width: 120px;
 }
 
-.viewchild .heading span{
-	color: var(--orange);
-	text-transform: uppercase;
-	text-align: center;
-	align-items: center;
+#child-table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: (--light-color);
 }
 
-.viewchild .child p{
-	margin-top: 0rem;
-	font-size: 1.7rem;
-	text-transform: none;
-	line-height: 1.8;
-	color: #ef8989;
-	padding: 1rem 2rem;
-	text-align: left;
+#child-table th,
+#child-table td {
+    max-width: 80%;
+    border: 1px solid #ddd;
+    padding: 10px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.viewchild .child a {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9280c5;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.viewchild .child a:hover {
+    color: var(--light-color);
+}
+
 
 .btn{
 	font-size: 1.7rem;
@@ -184,7 +205,7 @@ section{
 /* end */
 .child-container {
     list-style-type: none;
-    padding: 20px;
+    padding: 20px;.
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
@@ -243,57 +264,5 @@ ul li {
 }
         
 .viewchild .child a:hover {
-	color: var(--light-color);
-}
-
-/* staff view */
-.staffview{
-	max-height: 100%;
-	background-color: var(--white);
-	align-items: center;
-}
-
-.staffview .staff{
-	display: flex;
-	text-align: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 2rem;
-}
-
-.staffview .heading{
-	font-size: 3.5rem;
-	color: var(--black);
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	text-transform: uppercase;
-	font-weight: bolder;
-	margin-top: 8rem;
-}
-
-.staffview .heading h1{
-	text-align: center;
-}
-
-.staffview .heading span{
-	color: var(--orange);
-	text-transform: uppercase;
-	text-align: center;
-	align-items: center;
-}
-
-
-.staffview .staff a{
-	margin-top: 2rem;
-	font-size: 1.7rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #9280c5;
-	font-weight: bold;
-	text-transform: none;
-}
-        
-.staffview .staff a:hover {
 	color: var(--light-color);
 }
