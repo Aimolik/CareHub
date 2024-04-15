@@ -1,0 +1,119 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image: url('/img/3.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+#calendar {
+  border-collapse: collapse;
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+  background-color: white;
+  width: 80vw; 
+  max-width: none;
+}
+#calendar td,
+#calendar th {
+  padding: 20px; 
+}
+
+#calendar th {
+  background-color: #007BFF; 
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+#calendar td {
+  border: 1px solid #DEE2E6; 
+  padding: 15px;
+  text-align: center;
+  width: 14.28%; 
+  font-size: 1em;
+}
+
+
+#calendar td:hover {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transform: scale(1.1); 
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 600px) {
+  #calendar td,
+  #calendar th {
+    padding: 5px;
+  }
+}
+
+#calendar td.weekend {
+    background-color: red;
+    color: white;
+}
+
+.todo-list {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-list table {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #ddd;
+}
+.schedule-table {
+    margin-bottom: 20px;
+    text-align: center; 
+    z-index: 1; 
+    position: relative; 
+    background-color: #fff;
+}
+
+.schedule-table h2 {
+    margin-bottom: 10px;
+}
+
+.schedule-table table {
+    margin: 0 auto; 
+    width: auto; 
+    border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #f2f2f2;
+}
+

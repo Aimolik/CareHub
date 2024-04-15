@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register vehicle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="registercar.css">
+ 
+</head>
+<body>
+	<header class= "header">
+		<a href="./GuardianDashboard.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<nav class="navbar">
+			
+		</nav>
+		
+		<div class="icons">
+			<div class="fas fa-sign-out-alt logout-button" id="logout-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+	
+	<section class="vehicle" id="vehicle">
+    
+        <h1 class="heading">Register <span>Vehicle</span> </h1>
+		
+		<div class="row">
+		
+			<div class="image">
+				<img src="./img/regvehicle.jpg" alt="">
+			</div>
+		
+			<div class="content">
+				<h3>Register here!</h3>
+				<p>Welcome to our vehicle registration portal! Here, you can easily register your vehicle by simply clicking on the button below. We've streamlined the process to ensure a hassle-free experience for you. Get started now and enjoy the convenience of managing your vehicle registration online.</p>
+	
+				<form action="" method="post">
+				</form>
+					<form action="http://20.55.39.9:8080/api/vehicle" method="post">
+
+						<div class="subform">
+							  
+						</div>
+
+					<input type="submit" value="Register" class="submit">
+			</div>
+		
+		
+		</div>
+	</section>
+	
+    <!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
+<script type="module" src="./RegisterVehicle.js"></script>
+</body>
+</html>

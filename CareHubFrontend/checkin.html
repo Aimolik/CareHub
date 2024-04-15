@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-In</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >  
+  <link rel="stylesheet" href="checking.css">
+ 
+</head>
+<body>
+	<header class= "header">
+		<a href="./GuardianDashboard.html" class="logo"><i class="fa-solid fa-school"></i> CAREHUB</a>
+		
+		<div class="icons">
+			<div class="fas fa-sign-out-alt logout-button" id="logout-btn"></div> 
+			<div class="fas fa-bars" id="menu-btn"></div>
+		</div>
+			
+	</header>
+	
+	<section class="annouce" id="annouce">
+		<h1 class="heading"><span>Check-In</span> </h1>
+		
+        <div class="box-container">
+			<div class="welcome">
+			<p>Welcome to the check-in feature, where you can conveniently register your child's arrival and ensure a seamless transition into our daycare center's nurturing environment. With just a few clicks, you'll initiate your child's engaging and enriching day, knowing they're in safe hands.</p>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="image">
+				<img src="./img/checkin.gif" alt="">
+			</div>
+			
+			<form action="" method="post">
+				<h3>check-in</h3>
+
+				<div class="container">
+					<form id="checkin-form">
+						<label for="child-select">Child:</label>
+						<select id="child-select">
+						</select>
+							<select id="checkin-time" name="checkin-time">
+								<option value="07:00">7:00 AM</option>
+								<option value="08:00">8:00 AM</option>
+								<option value="09:00">9:00 AM</option>
+								<option value="10:00">10:00 AM</option>
+								<option value="11:00">11:00 AM</option>
+								<option value="12:00">12:00 PM</option>
+							</select>
+                
+						<button id="checkin-button">Check-in</button>
+					</form>
+				</div>
+			</form>
+		</div>
+		
+	
+	</section>
+	
+    <!-- footer -->
+	<section class="footer">
+		<div class="credit"> &copy; copyright @ 2024 by <span>carehub</span></div>
+	</section>
+	
+    <script type="module" src="./checkin.js"></script>
+</body>
+</html>
